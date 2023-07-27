@@ -15,13 +15,10 @@ public class Apartments {
 
 
 public void a() {
-	
 	tenantNames.add("John Doe");
 	tenantNames.add("Jane Smith");
-
 	meansOfCommunication.add("Email: john.doe@example.com");
 	meansOfCommunication.add("Phone: +1 123-456-7890");
-
 }
 
     public Apartments(int floor,int id,ArrayList tenantNames,ArrayList meansOfCommunication,int numberOfBathrooms, int numberOfBedrooms, boolean hasBalcony) {

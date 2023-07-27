@@ -188,7 +188,7 @@ public class HousingUnit {
                 ", Floors: " + numberOfFloors +
                 ", Services: " + availableServices +
                 ", Accept: " + acceptflag +
-                ", Apartments: " + A;
+                ", \nApartments: " + A;
     }
 
 }

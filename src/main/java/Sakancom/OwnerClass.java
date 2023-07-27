@@ -8,6 +8,9 @@ import io.cucumber.java.bs.A;
 
 public class OwnerClass {
 	ArrayList<HousingUnit> houseinfo = new ArrayList<HousingUnit>();
+	ArrayList<String> tenantNames = new ArrayList<String>();
+	ArrayList<String> meansOfCommunication = new ArrayList<String>();
+	Apartments A;
 
 	private Scanner scanner;
 	public boolean readinfoflag=false;
@@ -17,12 +20,7 @@ public class OwnerClass {
 	int idresidence=0;
 	int idapart=0;
 	int idf=0;
-
 	public boolean viewapartflag=false;
-
-
-	
-
     public OwnerClass(Scanner scanner) {
         this.scanner = scanner;
     }
@@ -34,8 +32,9 @@ public void ownermenu() {
     do {
         System.out.println("========= Housing Owner Menu =========");
         System.out.println("1. Add a private residence");
-        System.out.println("2. View owner dashboard");
-        System.out.println("3. Exit");
+        System.out.println("2. View listed residences");
+        System.out.println("3. display the number of tenants and floors in specific residence ");
+        System.out.println("4. Exit");
         System.out.print("Enter your choice: ");
         choice = scanner.nextInt();
         scanner.nextLine(); // Consume the newline character
@@ -63,19 +62,11 @@ public void ownermenu() {
             default:
                 System.out.println("Invalid choice. Please try again.");
         }
-    } while (choice != 3);
+    } while (choice != 6);
 
 }
 public void addresidence() {
 	// TODO Auto-generated method stub
-		ArrayList<String> tenantNames = new ArrayList<String>();
-		ArrayList<String> meansOfCommunication = new ArrayList<String>();
-
-	tenantNames.add("John Doe");
-	tenantNames.add("Jane Smith");
-
-	meansOfCommunication.add("Email: john.doe@example.com");
-	meansOfCommunication.add("Phone: +1 123-456-7890");
 	    readinfoflag = true;
 	    System.out.println("Enter the id:");
         int iD = scanner.nextInt();
@@ -111,9 +102,14 @@ public void addresidence() {
         System.out.println("Enter the id of apartment:");
         int ida = scanner.nextInt();
         scanner.nextLine();
-        Apartments A=new Apartments(floornum,ida ,tenantNames,meansOfCommunication,5,3,true);
+        System.out.println("Enter tenant Names:");
+        String n=  scanner.nextLine();
+        tenantNames.add(n);
+        System.out.println("Enter the means Of Communication: ");
+        String comm=  scanner.nextLine();
+        meansOfCommunication.add(comm);
 
-        // Create a HousingUnit object and add it to the ArrayList
+        Apartments A=new Apartments(floornum,ida ,tenantNames,meansOfCommunication,5,3,true);
         HousingUnit unit = new HousingUnit(iD, location, photo, rent, numberOfTenants, numberOfFloors,
                                            availableServices, acceptflag, A);
         houseinfo.add(unit);
@@ -135,7 +131,8 @@ public void numoftenant() {
 	int num=0;
     System.out.println("Enter the id of the residence: ");
      idresidence = scanner.nextInt();
-    for(int i=0;i<houseinfo.size();i++) {
+    for(int i=0;i<=houseinfo.size();i++) {
+
     	if(idresidence==i) {
             num=houseinfo.get(i).getNumberOfTenants();
     	}
@@ -165,7 +162,6 @@ public void viewapatmen() {
     	if(idf==i) {
             System.out.println(Ap.get(i).toString());	
     	}
-
 
 	}
 	viewapartflag=true;
