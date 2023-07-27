@@ -4,7 +4,6 @@
   <artifactId>Sakancom</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
-   <dependencies>
 	  <dependency>
 		  <groupId>io.cucumber</groupId>
 		  <artifactId>cucumber-java</artifactId>
@@ -22,6 +21,6 @@
 		  <version>7.3.4</version>
 		  <scope>test</scope>
       </dependency>
-
   </dependencies>
+  
 </project>

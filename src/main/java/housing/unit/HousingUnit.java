@@ -1,25 +1,167 @@
 package housing.unit;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
+import Sakancom.Apartments;
+import Sakancom.User;
+
 public class HousingUnit {
 	
+	
+
 
     private String location;
     private String photo;
     private double rent;
     private int numberOfTenants;
     private int numberOfFloors;
+    int id;
     private String availableServices;
+    private boolean acceptflag;
+    private Apartments A;
+    
+    
+    public HousingUnit(int id, String location, String photo, double rent, int numberOfTenants, int numberOfFloors,
+             String availableServices, boolean acceptflag, Apartments A) {
+    this.location = location;
+    this.photo = photo;
+    this.rent = rent;
+    this.numberOfTenants = numberOfTenants;
+    this.numberOfFloors = numberOfFloors;
+    this.availableServices = availableServices;
+    this.acceptflag = acceptflag;
+    this.id = id;
+    this.A = A;
+}
 
-    public HousingUnit(String location, String photo, double rent, int numberOfTenants, int numberOfFloors, String availableServices) {
-        this.location = location;
-        this.photo = photo;
-        this.rent = rent;
-        this.numberOfTenants = numberOfTenants;
-        this.numberOfFloors = numberOfFloors;
-        this.availableServices = availableServices;
-    }
+    public String getLocation() {
+		return location;
+	}
 
-    @Override
+
+
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+
+
+
+	public String getPhoto() {
+		return photo;
+	}
+
+
+
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+
+
+
+	public double getRent() {
+		return rent;
+	}
+
+
+
+
+	public void setRent(double rent) {
+		this.rent = rent;
+	}
+
+
+
+
+	public int getNumberOfTenants() {
+		return numberOfTenants;
+	}
+
+
+
+
+	public void setNumberOfTenants(int numberOfTenants) {
+		this.numberOfTenants = numberOfTenants;
+	}
+
+
+
+
+	public int getNumberOfFloors() {
+		return numberOfFloors;
+	}
+
+
+
+
+	public void setNumberOfFloors(int numberOfFloors) {
+		this.numberOfFloors = numberOfFloors;
+	}
+
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+
+	public String getAvailableServices() {
+		return availableServices;
+	}
+
+
+
+
+	public void setAvailableServices(String availableServices) {
+		this.availableServices = availableServices;
+	}
+
+
+
+
+	public boolean isAcceptflag() {
+		return acceptflag;
+	}
+
+
+
+
+	public void setAcceptflag(boolean acceptflag) {
+		this.acceptflag = acceptflag;
+	}
+
+
+
+
+	public Apartments getA() {
+		return A;
+	}
+
+
+
+
+	public void setA(Apartments a) {
+		A = a;
+	}
+
+
+
+
+	@Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
@@ -35,6 +177,18 @@ public class HousingUnit {
     @Override
     public int hashCode() {
         return Objects.hash(location, photo, rent, numberOfTenants, numberOfFloors, availableServices);
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + id +
+                ", Location: " + location +
+                ", Rent: $" + rent +
+                ", Tenants: " + numberOfTenants +
+                ", Floors: " + numberOfFloors +
+                ", Services: " + availableServices +
+                ", Accept: " + acceptflag +
+                ", Apartments: " + A;
     }
 
 }

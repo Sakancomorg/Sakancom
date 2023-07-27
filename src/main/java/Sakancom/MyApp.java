@@ -8,6 +8,7 @@ public class MyApp {
 		// TODO Auto-generated method stub
         Scanner scanner = new Scanner(System.in);
 		LoginSteps LS= new LoginSteps(scanner);
+		OwnerClass o=new OwnerClass(scanner);
 
 
 		LS.init();
@@ -16,8 +17,8 @@ public class MyApp {
 			a.adminmenu();
 		}
 		else if(LS.ownerflag) {
-			OwnerClass O=new OwnerClass(scanner);
-			O.ownermenu();
+			//OwnerClass O=new OwnerClass(scanner);
+			o.ownermenu();
 			
 		}
 		else if(LS.tenantflag) {
