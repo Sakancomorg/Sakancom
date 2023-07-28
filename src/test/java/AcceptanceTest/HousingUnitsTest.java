@@ -5,8 +5,10 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
+import Sakancom.AdminClass;
 import housing.unit.HouseExist;
 import housing.unit.HousingUnit;
+import housing.unit.ModifyHouseUnit;
 import housing.unit.MyApp;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -19,12 +21,20 @@ public class HousingUnitsTest {
 private boolean HouseIsExist;
 MyApp obj=null ;
 HousingUnit EnteredHouse;
+HousingUnit ModifiesHouseBefore;
+HousingUnit ModifiesHouseAfter;
 ArrayList <HousingUnit> HousingUnitList;
-public HousingUnitsTest(MyApp obj) {
+ModifyHouseUnit MH ;
+public HousingUnitsTest(MyApp obj,ModifyHouseUnit MH) {
 		super();
 		this.obj= obj;
 	    this.EnteredHouse=obj.EnteredHouse;
-	    this.HousingUnitList=obj.getHousingUnitList();
+	    this.HousingUnitList=MyApp.getHousingUnitList();
+	    this.MH=MH;
+	    ModifyHouseUnit.modifyAdmin();
+	    this.ModifiesHouseBefore= ModifyHouseUnit.housingUnitToModify;
+	    this.ModifiesHouseAfter= ModifyHouseUnit.housingUnitToModifyAfter;
+	    
 	}
 
 @Given("the Admin enterd the info of the housing unit")
@@ -62,26 +72,22 @@ public void the_housing_unit_details_are_saved_in_the_system() {
 @Given("the Admin has selected a housing unit for modification")
 public void the_admin_has_selected_a_housing_unit_for_modification() {
     // Write code here that turns the phrase above into concrete actions
-	assertTrue(true);
+	assertTrue(ModifiesHouseBefore!=null);
     
 }
 
 @When("the Admin makes changes to the housing data")
 public void the_admin_makes_changes_to_the_housing_data() {
     // Write code here that turns the phrase above into concrete actions
+	assertTrue(ModifiesHouseAfter!=null);
 	
    
 }
 
-@Then("the Admin can make changes to the housing data")
-public void the_admin_can_make_changes_to_the_housing_data() {
-    // Write code here that turns the phrase above into concrete actions
-    
-}
 
 @Then("the modified housing data is updated in the system")
 public void the_modified_housing_data_is_updated_in_the_system() {
-    // Write code here that turns the phrase above into concrete actions
+	assertTrue(HouseExist.cheack(ModifiesHouseAfter,HousingUnitList));
   
 }
 

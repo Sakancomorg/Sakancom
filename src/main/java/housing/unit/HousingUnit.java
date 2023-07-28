@@ -2,6 +2,7 @@ package housing.unit;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
 
 import Sakancom.Apartments;
 import Sakancom.User;
@@ -161,23 +162,18 @@ public class HousingUnit {
 
 
 
-	@Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        HousingUnit other = (HousingUnit) obj;
-        return Double.compare(other.rent, rent) == 0 &&
-               numberOfTenants == other.numberOfTenants &&
-               numberOfFloors == other.numberOfFloors &&
-               location.equals(other.location) &&
-               photo.equals(other.photo) &&
-               availableServices.equals(other.availableServices);
-    }
+	   @Override
+	    public boolean equals(Object o) {
+	        if (this == o) return true;
+	        if (o == null || getClass() != o.getClass()) return false;
+	        HousingUnit that = (HousingUnit) o;
+	        return id == that.id;
+	    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(location, photo, rent, numberOfTenants, numberOfFloors, availableServices);
-    }
+	    @Override
+	    public int hashCode() {
+	        return Objects.hash(id);
+	    }
 
     @Override
     public String toString() {
@@ -190,5 +186,30 @@ public class HousingUnit {
                 ", Accept: " + acceptflag +
                 ", \nApartments: " + A;
     }
+    
+ 
+	public static HousingUnit findHousingUnitById() {
+		 Scanner scanner = new Scanner(System.in);
 
+	        System.out.println("Enter the ID of the housing unit to modify: ");
+	        int id = scanner.nextInt();
+
+	 for (HousingUnit house :  MyApp.getHousingUnitList()) {
+	        if (house.getId() == id) {
+	            return house;
+	        }
+	    }
+	    return null;
+	}
 }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+

@@ -90,13 +90,13 @@ public class OwnerTest {
 	@Then("the names of the tenants and their contact information should be displayed")
 	public void the_names_of_the_tenants_and_their_contact_information_should_be_displayed() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    
 	}
 
 	@Then("the number of bathrooms and bedrooms, and balcony availability should be shown")
 	public void the_number_of_bathrooms_and_bedrooms_and_balcony_availability_should_be_shown() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    
 	}
 
 

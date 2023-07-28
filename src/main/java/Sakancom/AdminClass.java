@@ -2,15 +2,18 @@ package Sakancom;
 
 import java.util.Scanner;
 
+import housing.unit.HousingSystem;
+
 public class AdminClass {
 	private Scanner scanner;
-
+	public Boolean re;
+	static int choice;
     // Constructor that takes the shared Scanner object as a parameter
     public AdminClass(Scanner scanner) {
         this.scanner = scanner;
     }
 	public void adminmenu() {
-        int choice;
+      
         do {
             System.out.println("========= Housing System Menu =========");
             System.out.println("1. View requests for advertisement");
@@ -36,13 +39,14 @@ public class AdminClass {
                    // housingSystem.rejectAdvertisement();
                     break;
                 case 4:
-                   // housingSystem.viewReservations();
+                   HousingSystem.viewReservations();
+                	re=true;
                     break;
                 case 5:
                     //housingSystem.addAndAdvertiseHousingUnit();
                     break;
                 case 6:
-                   // housingSystem.modifyHousingData();
+                         HousingSystem. modifyHousingData();
                     break;
                 case 7:
                     System.out.println("Exiting the Housing System. Goodbye!");
@@ -53,6 +57,10 @@ public class AdminClass {
         } while (choice != 7);
         
         
+	}
+	
+	 public  int getChoice() {
+		return choice;
 	}
 
 }

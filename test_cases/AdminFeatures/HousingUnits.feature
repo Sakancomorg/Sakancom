@@ -9,5 +9,4 @@ Then the housing unit details are saved in the system
 Scenario: Admin can modify housing data
 Given the Admin has selected a housing unit for modification
 When the Admin makes changes to the housing data
-Then the Admin can make changes to the housing data
-And the modified housing data is updated in the system
+Then the modified housing data is updated in the system
