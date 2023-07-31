@@ -18,7 +18,7 @@ public class OwnerClass {
 	public boolean numfloorandTen=false;
 	int idresidence=0;
 	int idapart=0;
-	int idf=0;
+	int floornum=0;
 	public boolean viewapartflag=false;
     public OwnerClass(Scanner scanner) {
         this.scanner = scanner;
@@ -33,10 +33,11 @@ public void ownermenu() {
         System.out.println("1. Add a private residence");
         System.out.println("2. View listed residences");
         System.out.println("3. display the number of tenants and floors in specific residence ");
-        System.out.println("4. Exit");
+        System.out.println("4. The names of the tenants and their contact information and the number of bathrooms and bedrooms, and balcony availability should be displayed ");
+        System.out.println("5. Exit");
         System.out.print("Enter your choice: ");
         choice = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
+        scanner.nextLine(); 
 
         switch (choice) {
             case 1:
@@ -52,7 +53,7 @@ public void ownermenu() {
             case 4: viewapatmen() ;
                       break;
 
-            case 5:    break;
+            case 5:  break;
 
 
             case 6:
@@ -65,7 +66,6 @@ public void ownermenu() {
 
 }
 public void addresidence() {
-	// TODO Auto-generated method stub
 	    readinfoflag = true;
 	    System.out.println("Enter the id:");
         int iD = scanner.nextInt();
@@ -96,7 +96,7 @@ public void addresidence() {
         boolean acceptflag = scanner.nextBoolean();
         scanner.nextLine();
         System.out.println("Enter the number of floor:");
-        int floornum = scanner.nextInt();
+        floornum = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Enter the id of apartment:");
         int ida = scanner.nextInt();
@@ -111,6 +111,7 @@ public void addresidence() {
         Apartments A=new Apartments(floornum,ida ,tenantNames,meansOfCommunication,5,3,true);
         HousingUnit unit = new HousingUnit(iD, location, photo, rent, numberOfTenants, numberOfFloors,
                                            availableServices, acceptflag, A);
+        
         houseinfo.add(unit);
 	    
 	    addflag = true;
@@ -118,7 +119,6 @@ public void addresidence() {
 
 
 public void viewresidences() {
-	// TODO Auto-generated method stub
 	for (HousingUnit unit : houseinfo) {
         System.out.println(unit + ", ");
     }
@@ -126,7 +126,6 @@ public void viewresidences() {
 	
 }
 public void numoftenant() {
-	// TODO Auto-generated method stub
 	int num=0;
     System.out.println("Enter the id of the residence: ");
      idresidence = scanner.nextInt();
@@ -140,7 +139,6 @@ public void numoftenant() {
     System.out.println("The number of tenant is : "+num);	
 }
 public void numoffloors() {
-	// TODO Auto-generated method stub
 	int N=0;
 	for(int i=0;i<houseinfo.size();i++) {
     	if(idresidence==i) {
@@ -152,17 +150,42 @@ public void numoffloors() {
 }
 }
 public void viewapatmen() {
-	// TODO Auto-generated method stub
-	ArrayList<Apartments> Ap = new ArrayList<Apartments>();
-	
-    System.out.println("Enter the number of floor: ");
-    idf = scanner.nextInt();
-	for(int i=0;i<Ap.size();i++) {
-    	if(idf==i) {
-            System.out.println(Ap.get(i).toString());	
-    	}
+	ArrayList<Apartments> apartmentsList = new ArrayList<Apartments>();
 
-	}
+	System.out.println("Enter the number of floor:");
+	int idf = scanner.nextInt();
+    for (HousingUnit unit : houseinfo) {
+        if (unit.getA().getFloor() == idf) {
+        	Apartments apartment = unit.getA();
+            apartmentsList.add(apartment);
+            
+        }
+    }
+
+    if (!apartmentsList.isEmpty()) {
+        viewapartflag = true;
+
+        for (Apartments apartment : apartmentsList) {
+            System.out.println("Floor Number: " + apartment.getFloor());
+            System.out.println("Number of Bathrooms: " + apartment.getNumberOfBathrooms());
+            System.out.println("Number of Bedrooms: " + apartment.getNumberOfBedrooms());
+            System.out.println("Balcony Availability: " + apartment.isHasBalcony());
+
+            System.out.println("Tenants in the Apartment:");
+            ArrayList<String> tenantNames = apartment.getTenantNames();
+            ArrayList<String> meansOfCommunication = apartment.getMeansOfCommunication();
+
+            for (int i = 0; i < tenantNames.size(); i++) {
+                System.out.println("Tenant Name: " + tenantNames.get(i));
+                System.out.println("Means of Communication: " + meansOfCommunication.get(i));
+            }
+
+            System.out.println(); // Add a new line to separate different apartments
+        }
+    } else {
+        System.out.println("No apartments found on floor number " + idf);
+    }
+
 	viewapartflag=true;
 	}   
 

@@ -179,13 +179,13 @@ public class HousingUnit {
     @Override
     public String toString() {
         return "ID: " + id +
-                ", Location: " + location +
-                ", Rent: $" + rent +
-                ", Tenants: " + numberOfTenants +
-                ", Floors: " + numberOfFloors +
-                ", Services: " + availableServices +
-                ", Accept: " + acceptflag +
-                ", \nApartments: " + A;
+                ",\n Location: " + location +
+                ",\n Rent: $" + rent +
+                ",\n Tenants: " + numberOfTenants +
+                ",\n Floors: " + numberOfFloors +
+                ",\n Services: " + availableServices +
+                ",\n Accept: " + acceptflag +
+                ",\nApartments: " + A;
     }
 
 }
