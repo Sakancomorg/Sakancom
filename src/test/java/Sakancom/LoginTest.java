@@ -7,6 +7,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginTest {
+	public boolean adminflag;
+	public boolean ownerflag;
+	public boolean tenantflag;
 	public Log L=new Log();	
 @Given("{string} status log is {int}")
 public void status_log_is(String string, Integer S) {
@@ -17,8 +20,18 @@ public void status_log_is(String string, Integer S) {
 		}
 		else {
 			L.islog=true;
+
+	        if(L.userinfo.get(i).role.equals("admin")) {
+	             adminflag=true;
+	        }
+	        else if(L.userinfo.get(i).role.equals("owner")) {
+	        	ownerflag=true;
+	        }
+	        else if(L.userinfo.get(i).role.equals("tenant")) {
+	        	tenantflag=true;
+	        }
 		}
-		
+	        
 	}
 }
 

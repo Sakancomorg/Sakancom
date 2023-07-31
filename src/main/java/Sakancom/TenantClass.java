@@ -1,9 +1,20 @@
 package Sakancom;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import housing.unit.HousingUnit;
 
 public class TenantClass {
 	private Scanner scanner;
+    int choice;
+    boolean viewavailablehousef=false;
+    boolean viewselcethousef=false;
+    boolean book=false;
+    boolean viewflag=false;
+	ArrayList<HousingUnit> tenanthouseinfo = new ArrayList<HousingUnit>();
+
+
 
     // Constructor that takes the shared Scanner object as a parameter
     public TenantClass(Scanner scanner) {
@@ -11,9 +22,8 @@ public class TenantClass {
     }
 	
 	public void tenantmenu() {
-	
+
 	Scanner scanner = new Scanner(System.in);
-    int choice;
     do {
         System.out.println("========= Tenant Menu =========");
         System.out.println("1. View available housing");
@@ -25,11 +35,11 @@ public class TenantClass {
         System.out.println("7. Exit");
         System.out.print("Enter your choice: ");
         choice = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
+        scanner.nextLine(); 
 
         switch (choice) {
             case 1:
-               // tenantSystem.viewAvailableHousing();
+            	viewavailablehouse();
                 break;
             case 2:
                // tenantSystem.viewHousingDetails();
@@ -56,5 +66,25 @@ public class TenantClass {
 
     scanner.close();
 	}
+
+	public void viewavailablehouse() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void viewselcethouse() {
+		// TODO Auto-generated method stub
+		viewselcethousef=true;
+		
+	}
+
+	public void book() {
+		// TODO Auto-generated method stub
+		book=true;
+		
+	}
+	
+	
+	
 }
 

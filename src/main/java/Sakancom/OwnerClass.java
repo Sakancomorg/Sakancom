@@ -11,7 +11,6 @@ public class OwnerClass {
 	ArrayList<String> tenantNames = new ArrayList<String>();
 	ArrayList<String> meansOfCommunication = new ArrayList<String>();
 	Apartments A;
-
 	private Scanner scanner;
 	public boolean readinfoflag=false;
 	public boolean addflag=false;

@@ -8,9 +8,6 @@ import Sakancom.User;
 
 public class HousingUnit {
 	
-	
-
-
     private String location;
     private String photo;
     private double rent;

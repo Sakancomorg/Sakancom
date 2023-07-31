@@ -31,7 +31,6 @@ public class OwnerTest {
 
 	@When("fill in all the required information")
 	public void fill_in_all_the_required_information() {
-		
 		   readinfoflag =true;
 	}
 
