@@ -18,8 +18,7 @@ public class HousingSystem {
 
     public static void viewReservations() {
        for( HousingUnit house: MyApp.ReservationsList()) {
-    	   house.toString();
-    	   System.out.println();
+    	   house.printUH();
        }
     }
 

@@ -5,13 +5,17 @@ import java.util.Scanner;
 import housing.unit.HousingSystem;
 
 public class AdminClass {
-	private Scanner scanner;
+	 Scanner scanner = new Scanner(System.in);
 	public Boolean re;
 	static int choice;
     // Constructor that takes the shared Scanner object as a parameter
-    public AdminClass(Scanner scanner) {
-        this.scanner = scanner;
+	  /*public AdminClass(Scanner scanner) {
+	        this.scanner = scanner;
+	    }*/
+	public AdminClass() {
+      
     }
+  
 	public void adminmenu() {
       
         do {

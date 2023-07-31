@@ -29,7 +29,7 @@ public void a() {
         this.meansOfCommunication=meansOfCommunication;
         this.id=id;    
         this.floor=floor;
-    }
+   
     @Override
     public String toString() {
         return "\nID: " + id +
@@ -38,6 +38,14 @@ public void a() {
                 ", Bathrooms: " + numberOfBathrooms +
                 ", Bedrooms: " + numberOfBedrooms +
                 ", Balcony: " + hasBalcony;
+    }
+    public void printA () {
+        System.out.println("\nID: " + id +
+                ", Tenant Names: " + tenantNames +
+                ", Means of Communication: " + meansOfCommunication +
+                ", Bathrooms: " + numberOfBathrooms +
+                ", Bedrooms: " + numberOfBedrooms +
+                ", Balcony: " + hasBalcony);
     }
 
 }

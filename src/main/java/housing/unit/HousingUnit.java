@@ -184,7 +184,18 @@ public class HousingUnit {
                 ", Floors: " + numberOfFloors +
                 ", Services: " + availableServices +
                 ", Accept: " + acceptflag +
-                ", \nApartments: " + A;
+                ", \nApartments: " + A.toString();
+    }
+    public void printUH() {
+        System.out.println( "ID: " + id +
+                ", Location: " + location +
+                ", Rent: $" + rent +
+                ", Tenants: " + numberOfTenants +
+                ", Floors: " + numberOfFloors +
+                ", Services: " + availableServices +
+                ", Accept: " + acceptflag +
+                ", \nApartments: ");
+        A.printA();
     }
     
  
