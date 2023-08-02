@@ -1,14 +1,19 @@
 package Sakancom;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import housing.unit.HousingSystem;
+import housing.unit.HousingUnit;
+import housing.unit.MyApp;
 
 public class AdminClass {
-	 Scanner scanner = new Scanner(System.in);
-	public Boolean re;
+	 static Scanner scanner = new Scanner(System.in);
+	public static Boolean re;
 	static int choice;
-    // Constructor that takes the shared Scanner object as a parameter
+	static ArrayList <HousingUnit> AdvertisementList=MyApp.AdvertisementList();
+	 static ArrayList <HousingUnit> HousingUnitList=MyApp.getHousingUnitList() ;
+    // Constructor that takes the shsared Scanner object as a parameter
 	  /*public AdminClass(Scanner scanner) {
 	        this.scanner = scanner;
 	    }*/
@@ -16,7 +21,7 @@ public class AdminClass {
       
     }
   
-	public void adminmenu() {
+	public static void adminmenu() {
       
         do {
             System.out.println("========= Housing System Menu =========");
@@ -63,8 +68,44 @@ public class AdminClass {
         
 	}
 	
-	 public  int getChoice() {
+	 public static  int getChoice() {
 		return choice;
+	}
+
+	public static void viewAdvertisementRequest() {
+		
+		for(HousingUnit house: MyApp.AdvertisementList()) {
+			System.out.println(house.toString());
+		}
+		
+	}
+
+	public static HousingUnit acceptAdvertisementRequest() {
+		  int  id=Integer.parseInt(scanner.next()); // Consume the newline character
+		  HousingUnit houseR = null;
+		  for(HousingUnit house: AdvertisementList) {
+				if(house.getId()==id) {
+					
+					houseR=house;
+				}
+			}
+		  AdvertisementList.remove(houseR);
+			HousingUnitList.add(houseR);
+		  MyApp.setHousingUnitList(HousingUnitList);
+		return houseR;
+	}
+
+	public static HousingUnit rejectAdvertisementRequest() {
+		 int  id=Integer.parseInt(scanner.next()); // Consume the newline character
+		  HousingUnit houseR = null;
+		  for(HousingUnit house: AdvertisementList) {
+				if(house.getId()==id) {
+					
+					houseR=house;
+				}
+			}
+		  AdvertisementList.remove(houseR);
+		return houseR;
 	}
 
 }

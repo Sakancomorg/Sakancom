@@ -1,11 +1,10 @@
 package housing.unit;
 
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
 import Sakancom.Apartments;
-import Sakancom.User;
+import Sakancom.TenantClass;
 
 public class HousingUnit {
 	
@@ -19,24 +18,51 @@ public class HousingUnit {
     private int numberOfFloors;
     int id;
     private String availableServices;
-    private boolean acceptflag;
+    private boolean reservedFlag;
     private Apartments A;
-    
-    
+    private TenantClass t;
+    private boolean studentHouse;
     public HousingUnit(int id, String location, String photo, double rent, int numberOfTenants, int numberOfFloors,
-             String availableServices, boolean acceptflag, Apartments A) {
+             String availableServices, boolean reservedFlag, Apartments A,TenantClass t,boolean studentHouse) {
     this.location = location;
     this.photo = photo;
     this.rent = rent;
     this.numberOfTenants = numberOfTenants;
     this.numberOfFloors = numberOfFloors;
     this.availableServices = availableServices;
-    this.acceptflag = acceptflag;
+    this.reservedFlag = reservedFlag;
     this.id = id;
     this.A = A;
+    this.t=t;
+    this.studentHouse=studentHouse;
 }
 
-    public String getLocation() {
+    
+    public boolean isReservedFlag() {
+		return reservedFlag;
+	}
+
+	public void setReservedFlag(boolean reservedFlag) {
+		this.reservedFlag = reservedFlag;
+	}
+
+	public TenantClass getT() {
+		return t;
+	}
+
+	public void setT(TenantClass t) {
+		this.t = t;
+	}
+
+	public boolean isStudentHouse() {
+		return studentHouse;
+	}
+
+	public void setStudentHouse(boolean studentHouse) {
+		this.studentHouse = studentHouse;
+	}
+
+	public String getLocation() {
 		return location;
 	}
 
@@ -134,15 +160,15 @@ public class HousingUnit {
 
 
 
-	public boolean isAcceptflag() {
-		return acceptflag;
+	public boolean isReserved() {
+		return reservedFlag;
 	}
 
 
 
 
-	public void setAcceptflag(boolean acceptflag) {
-		this.acceptflag = acceptflag;
+	public void setReserved(boolean acceptflag) {
+		this.reservedFlag = acceptflag;
 	}
 
 
@@ -183,21 +209,10 @@ public class HousingUnit {
                 ", Tenants: " + numberOfTenants +
                 ", Floors: " + numberOfFloors +
                 ", Services: " + availableServices +
-                ", Accept: " + acceptflag +
+                ", Accept: " + reservedFlag +
                 ", \nApartments: " + A.toString();
     }
-    public void printUH() {
-        System.out.println( "ID: " + id +
-                ", Location: " + location +
-                ", Rent: $" + rent +
-                ", Tenants: " + numberOfTenants +
-                ", Floors: " + numberOfFloors +
-                ", Services: " + availableServices +
-                ", Accept: " + acceptflag +
-                ", \nApartments: ");
-        A.printA();
-    }
-    
+  
  
 	public static HousingUnit findHousingUnitById() {
 		 Scanner scanner = new Scanner(System.in);
@@ -212,6 +227,10 @@ public class HousingUnit {
 	    }
 	    return null;
 	}
+
+	
+	
+
 }
     
     

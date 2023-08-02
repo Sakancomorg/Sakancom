@@ -14,6 +14,7 @@ public class Apartments {
 	ArrayList<String> meansOfCommunication = new ArrayList<String>();
 
 
+	
 public void a() {
 	tenantNames.add("John Doe");
 	tenantNames.add("Jane Smith");
@@ -29,6 +30,15 @@ public void a() {
         this.meansOfCommunication=meansOfCommunication;
         this.id=id;    
         this.floor=floor;
+    }
+    public Apartments() {
+        this.numberOfBathrooms = 0;
+        this.numberOfBedrooms =0;
+        this.hasBalcony = false;
+      
+        this.id=0;    
+        this.floor=0;
+    }
    
     @Override
     public String toString() {

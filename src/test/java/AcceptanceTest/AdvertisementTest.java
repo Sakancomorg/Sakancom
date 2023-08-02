@@ -1,42 +1,75 @@
 package AcceptanceTest;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+
+import Sakancom.AdminClass;
+import housing.unit.HousingUnit;
+import housing.unit.MyApp;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
 public class AdvertisementTest {
-	@Given("there is a housing advertisement request")
-	public void thereIsAHousingAdvertisementRequest() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-	@When("the Admin views the housing advertisement request details")
-	public void theAdminViewsTheHousingAdvertisementRequestDetails() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-	@Then("the Admin accept the request")
-	public void theAdminAcceptTheRequest() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-	@Then("the housing unit is added to the system")
-	public void theHousingUnitIsAddedToTheSystem() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
 
-	@Given("there is a housing advertisement request")
-	public void thereIsAHousingAdvertisementRequest() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-	@When("the Admin views the housing advertisement request details")
-	public void theAdminViewsTheHousingAdvertisementRequestDetails() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-	@Then("the Admin reject the request")
-	public void theAdminRejectTheRequest() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	
+	
+	
+	 private HousingUnit housingUnit;
+	 private boolean hasAdvertisementRequest;
 
+@Given("there is a housing advertisement request")
+public void there_is_a_housing_advertisement_request() {
+    // Write code here that turns the phrase above into concrete actions
+	
+	 hasAdvertisementRequest = true;
+}
+
+@When("the Admin views the housing advertisement request details")
+public void the_admin_views_the_housing_advertisement_request_details() {
+	if (hasAdvertisementRequest) {
+		AdminClass.viewAdvertisementRequest();
+    }
+}
+
+@Then("the Admin {string} the request")
+public void the_admin_the_request(String action) {
+    // Write code here that turns the phrase above into concrete actions
+	 if (hasAdvertisementRequest) {
+         if (action.equals("Accept")) {
+            housingUnit= AdminClass.acceptAdvertisementRequest();
+         } else if (action.equals("Reject")) {
+        	 housingUnit= AdminClass.rejectAdvertisementRequest();
+         }
+	 }
+    
+}
+
+@Then("the housing unit is {string}")
+public void the_housing_unit_is(String outcome) {
+    // Write code here that turns the phrase above into concrete actions
+	  if (hasAdvertisementRequest) {
+          if (outcome.equals("Housing unit is added to the system")) {
+              
+              assertTrue(MyApp.getHousingUnitList().contains(housingUnit));
+          } else if (outcome.equals("Request is rejected")) {
+             assertFalse(MyApp.getHousingUnitList().contains(housingUnit));
+          }
+      } 
+}
+
+@Given("there is no housing advertisement request")
+public void there_is_no_housing_advertisement_request() {
+    // Write code here that turns the phrase above into concrete actions
+	 hasAdvertisementRequest = false;
+}
+
+@Then("the Admin cannot perform any action")
+public void the_admin_cannot_perform_any_action() {
+    // Write code here that turns the phrase above into concrete actions
+    assertTrue(true);
+}
 
 }

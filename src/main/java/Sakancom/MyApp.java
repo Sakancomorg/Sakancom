@@ -2,6 +2,8 @@ package Sakancom;
 
 import java.util.Scanner;
 
+import housing.unit.HousingUnit;
+
 public class MyApp {
 
 	public static void main(String[] args) {
@@ -23,12 +25,14 @@ public class MyApp {
 		}
 		else if(LS.tenantflag) {
 			TenantClass T=new TenantClass(scanner);
-			T.tenantmenu();
+			TenantClass.tenantmenu();
 			
 		}
 		
         scanner.close();
 
 	}
+
+	
 
 }

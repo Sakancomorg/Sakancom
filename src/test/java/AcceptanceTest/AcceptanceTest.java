@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="test_cases/AdminFeatures/Reservation.feature", 
+		features="test_cases/TenantFeatures", 
 		plugin="html:target/cucumber/out.html",
 		monochrome=true,
 		snippets=SnippetType.CAMELCASE,
