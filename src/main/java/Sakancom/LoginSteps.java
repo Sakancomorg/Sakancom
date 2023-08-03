@@ -7,6 +7,13 @@ public class LoginSteps {
 	public boolean tenantflag=false;
 	public boolean ownerflag=false;
 	private Scanner scanner;
+	private String username;
+	private String password;
+	private String role;
+	private String E;
+
+
+
 
 	public LoginSteps (Scanner scanner){
         this.scanner = scanner;
@@ -21,10 +28,10 @@ public class LoginSteps {
 
 	        while (!isLoggedIn) {
 	            System.out.print("Enter username: ");
-	            String username = scanner.nextLine();
+	             username = scanner.nextLine();
 
 	            System.out.print("Enter password: ");
-	            String password = scanner.nextLine();
+	             password = scanner.nextLine();
 
 	            isLoggedIn = checkCredentials(username, password);
 
@@ -37,7 +44,24 @@ public class LoginSteps {
 
 	    }
 
-	    public boolean checkCredentials(String username, String password) {
+	    public String getUsername() {
+			return username;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
+		}
+
+	
+		public String getRole() {
+			return role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+		
+		public boolean checkCredentials(String username, String password) {
 	    	boolean nameflag=false;
 	    	boolean pasflag=false;
 
@@ -48,12 +72,20 @@ public class LoginSteps {
 		    			pasflag=true;
 		    			if(L.userinfo.get(i).role.equals("admin")) {
 		    				adminflag=true;
+		    				role="admin";
+		    				E=L.userinfo.get(i).emaill;
 		    			}
 		    			else if (L.userinfo.get(i).role.equals("owner")) {
 		    				ownerflag=true;
+		    				role="owner";
+		    				E=L.userinfo.get(i).emaill;
+
 		    			}
 		    			else if (L.userinfo.get(i).role.equals("tenant")) {
 		    				tenantflag=true;
+		    				role="tenant";
+		    				E=L.userinfo.get(i).emaill;
+
 		    			}
 		    			
 		    			break;
@@ -64,6 +96,16 @@ public class LoginSteps {
 	    	
 	    	return nameflag&&pasflag;
 	    }
+
+		public String getE() {
+			return E;
+		}
+
+		public void setE(String e) {
+			E = e;
+		}
+
+	
 	
 
 

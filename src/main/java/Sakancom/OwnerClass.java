@@ -1,6 +1,7 @@
 package Sakancom;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import housing.unit.HousingUnit;
@@ -20,6 +21,8 @@ public class OwnerClass {
 	int idapart=0;
 	int floornum=0;
 	public boolean viewapartflag=false;
+	public boolean c=false;
+
     public OwnerClass(Scanner scanner) {
         this.scanner = scanner;
     }
@@ -40,9 +43,12 @@ public void ownermenu() {
         scanner.nextLine(); 
 
         switch (choice) {
-            case 1:
+            case 1:{
+            	c=true;
             	addresidence();
                 break;
+            }
+            	
             case 2:
             	viewresidences();
                 break;
@@ -66,6 +72,7 @@ public void ownermenu() {
 
 }
 public void addresidence() {
+	init();
 	    readinfoflag = true;
 	    System.out.println("Enter the id:");
         int iD = scanner.nextInt();
@@ -117,8 +124,62 @@ public void addresidence() {
 	    addflag = true;
 	}
 
+public void init() {
+	int iD1 = 1;
+    String location1 = "Sample Location 1";
+    String photo1 = "sample1.jpg";
+    double rent1 = 1200.0;
+    int numberOfTenants1 = 4;
+    int numberOfFloors1 = 2;
+    String availableServices1 = "Parking, Gym";
+    boolean acceptflag1 = true;
 
+    // Create Apartments object for the first HousingUnit
+    int floornum1 = 2;
+    int ida1 = 101;
+    ArrayList<String> tenantNames1 = new ArrayList<String>();
+    tenantNames1.add("John Doe");
+    ArrayList<String> meansOfCommunication1 = new ArrayList<String>();
+    meansOfCommunication1.add("Email");
+
+    Apartments A1 = new Apartments(floornum1, ida1, tenantNames1, meansOfCommunication1, 5, 3, true);
+
+    // Create HousingUnit object with the set values for Example 1
+    HousingUnit unit1 = new HousingUnit(iD1, location1, photo1, rent1, numberOfTenants1, numberOfFloors1,
+            availableServices1, acceptflag1, A1);
+
+    // Add the first unit to the houseinfo list
+    houseinfo.add(unit1);
+
+    // Example 2: Set values for the second HousingUnit
+    int iD2 = 2;
+    String location2 = "123 Main Street";
+    String photo2 = "house.jpg";
+    double rent2 = 1800.0;
+    int numberOfTenants2 = 3;
+    int numberOfFloors2 = 1;
+    String availableServices2 = "Swimming pool, Security";
+    boolean acceptflag2 = false;
+
+    // Create Apartments object for the second HousingUnit
+    int floornum2 = 1;
+    int ida2 = 102;
+    ArrayList<String> tenantNames2 = new ArrayList<String>();
+    tenantNames2.add("Jane Smith");
+    ArrayList<String> meansOfCommunication2 = new ArrayList<String>();
+    meansOfCommunication2.add("Phone");
+
+    Apartments A2 = new Apartments(floornum2, ida2, tenantNames2, meansOfCommunication2, 4, 2, false);
+
+    // Create HousingUnit object with the set values for Example 2
+    HousingUnit unit2 = new HousingUnit(iD2, location2, photo2, rent2, numberOfTenants2, numberOfFloors2,
+            availableServices2, acceptflag2, A2);
+
+    // Add the second unit to the houseinfo list
+    houseinfo.add(unit2);
+}
 public void viewresidences() {
+	init();
 	for (HousingUnit unit : houseinfo) {
         System.out.println(unit + ", ");
     }
@@ -129,8 +190,7 @@ public void numoftenant() {
 	int num=0;
     System.out.println("Enter the id of the residence: ");
      idresidence = scanner.nextInt();
-    for(int i=0;i<=houseinfo.size();i++) {
-
+    for(int i=1;i<=houseinfo.size();i++) {
     	if(idresidence==i) {
             num=houseinfo.get(i).getNumberOfTenants();
     	}
@@ -140,7 +200,7 @@ public void numoftenant() {
 }
 public void numoffloors() {
 	int N=0;
-	for(int i=0;i<houseinfo.size();i++) {
+	for(int i=1;i<houseinfo.size();i++) {
     	if(idresidence==i) {
             N=houseinfo.get(i).getNumberOfFloors();
     	}
@@ -151,6 +211,7 @@ public void numoffloors() {
 }
 public void viewapatmen() {
 	ArrayList<Apartments> apartmentsList = new ArrayList<Apartments>();
+    viewapartflag = true;
 
 	System.out.println("Enter the number of floor:");
 	int idf = scanner.nextInt();

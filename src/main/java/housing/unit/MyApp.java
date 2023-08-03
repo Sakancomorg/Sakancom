@@ -7,7 +7,6 @@ import Sakancom.AdminClass;
 import Sakancom.Apartments;
 import Sakancom.LoginSteps;
 import Sakancom.OwnerClass;
-import Sakancom.TenantClass;
 
 public class MyApp {
 	Apartments apartments;
