@@ -134,7 +134,6 @@ public void init() {
     String availableServices1 = "Parking, Gym";
     boolean acceptflag1 = true;
 
-    // Create Apartments object for the first HousingUnit
     int floornum1 = 2;
     int ida1 = 101;
     ArrayList<String> tenantNames1 = new ArrayList<String>();
