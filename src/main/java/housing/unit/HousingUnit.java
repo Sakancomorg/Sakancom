@@ -6,9 +6,6 @@ import java.util.Scanner;
 
 public class HousingUnit {
 	
-	
-
-
     private String location;
     private String photo;
     private double rent;
@@ -197,6 +194,7 @@ public class HousingUnit {
     @Override
     public String toString() {
         return "ID: " + id +
+<<<<<<< HEAD
                 ", Location: " + location +
                 ", Rent: $" + rent +
                 ", Tenants: " + numberOfTenants +
@@ -206,6 +204,15 @@ public class HousingUnit {
                 ", \nApartments: " + A.toString();
       
         	
+=======
+                ",\n Location: " + location +
+                ",\n Rent: $" + rent +
+                ",\n Tenants: " + numberOfTenants +
+                ",\n Floors: " + numberOfFloors +
+                ",\n Services: " + availableServices +
+                ",\n Accept: " + acceptflag +
+                ",\nApartments: " + A;
+>>>>>>> 7f7b7a8a035927cb4c78f067f5c90cb26b2a4afe
     }
   
  

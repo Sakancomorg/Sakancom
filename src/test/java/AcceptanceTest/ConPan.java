@@ -1,10 +1,17 @@
+<<<<<<< HEAD:src/test/java/AcceptanceTest/ConPan.java
 package AcceptanceTest;
+=======
+package Sakancom;
+>>>>>>> 7f7b7a8a035927cb4c78f067f5c90cb26b2a4afe:src/test/java/Sakancom/ConPan.java
 
 import static org.junit.Assert.assertTrue;
 
 import java.util.Scanner;
 
+<<<<<<< HEAD:src/test/java/AcceptanceTest/ConPan.java
 import housing.unit.TenantClass;
+=======
+>>>>>>> 7f7b7a8a035927cb4c78f067f5c90cb26b2a4afe:src/test/java/Sakancom/ConPan.java
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
