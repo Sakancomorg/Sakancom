@@ -1,17 +1,16 @@
 package AcceptanceTest;
 
-import static org.junit.Assert.assertFalse;
+
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import org.picocontainer.DefaultPicoContainer;
 
-import Sakancom.AdminClass;
+
+import housing.unit.AdminClass;
 import housing.unit.HousingUnit;
-import housing.unit.MyApp;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
+import housing.unit.MyData;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,9 +18,13 @@ import io.cucumber.java.en.When;
 public class ReservationTest {
 
    static Boolean ShowFlag;
-   static ArrayList <HousingUnit> ReservationsList=MyApp.ReservationsList();
+   AdminClass adminClass;
+   static ArrayList <HousingUnit> ReservationsList=MyData.ReservationsList();
 
 
+public ReservationTest(AdminClass adminClass) {
+	this.adminClass = adminClass;
+}
 @Given("there are existing reservations in the system")
 public void thereAreExistingReservationsInTheSystem() {
     // Write code here that turns the phrase above into concrete actions
@@ -31,7 +34,8 @@ public void thereAreExistingReservationsInTheSystem() {
 }
 @When("the Admin accesses the reservations section")
 public void theAdminAccessesTheReservationsSection() {
-	AdminClass.adminmenu();
+	
+	adminClass.adminmenu();
 	ShowFlag=AdminClass.re;
     // Write code here that turns the phrase above into concrete actions
   

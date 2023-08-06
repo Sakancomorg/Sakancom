@@ -1,10 +1,8 @@
 package housing.unit;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
-
-import Sakancom.Apartments;
-import Sakancom.TenantClass;
 
 public class HousingUnit {
 	
@@ -23,7 +21,7 @@ public class HousingUnit {
     private TenantClass t;
     private boolean studentHouse;
     public HousingUnit(int id, String location, String photo, double rent, int numberOfTenants, int numberOfFloors,
-             String availableServices, boolean reservedFlag, Apartments A,TenantClass t,boolean studentHouse) {
+             String availableServices, boolean reservedFlag, Apartments A,boolean studentHouse) {
     this.location = location;
     this.photo = photo;
     this.rent = rent;
@@ -33,7 +31,6 @@ public class HousingUnit {
     this.reservedFlag = reservedFlag;
     this.id = id;
     this.A = A;
-    this.t=t;
     this.studentHouse=studentHouse;
 }
 
@@ -167,10 +164,6 @@ public class HousingUnit {
 
 
 
-	public void setReserved(boolean acceptflag) {
-		this.reservedFlag = acceptflag;
-	}
-
 
 
 
@@ -211,22 +204,26 @@ public class HousingUnit {
                 ", Services: " + availableServices +
                 ", Accept: " + reservedFlag +
                 ", \nApartments: " + A.toString();
+      
+        	
     }
   
  
-	public static HousingUnit findHousingUnitById() {
-		 Scanner scanner = new Scanner(System.in);
-
-	        System.out.println("Enter the ID of the housing unit to modify: ");
-	        int id = scanner.nextInt();
-
-	 for (HousingUnit house :  MyApp.getHousingUnitList()) {
-	        if (house.getId() == id) {
-	            return house;
-	        }
-	    }
-	    return null;
+    
+    static HousingUnit FindHouse(ArrayList <HousingUnit> list) {
+    	 Scanner scanner = new Scanner(System.in);
+		  int  id=Integer.parseInt(scanner.next()); // Consume the newline character
+		  HousingUnit houseR = null;
+		  for(HousingUnit house:list) {
+				if(house.getId()==id) {
+					
+					houseR=house;
+				}
+			}
+			return houseR;
+			
 	}
+
 
 	
 	

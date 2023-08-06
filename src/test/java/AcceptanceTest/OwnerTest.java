@@ -1,6 +1,8 @@
-package Sakancom;
+package AcceptanceTest;
 import static org.junit.Assert.assertTrue;
 import java.util.Scanner;
+
+import housing.unit.OwnerClass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,21 +26,21 @@ public class OwnerTest {
 
 	@When("they choose to add a new private residence")
 	public void they_choose_to_add_a_new_private_residence() {
-		if(o.choice==1) {
+		o.ownermenu();
+		if(o.choice==1||o.choice==6) {
 			choiceadd=true;
 		}
 	}
 
 	@When("fill in all the required information")
 	public void fill_in_all_the_required_information() {
-		
 		   readinfoflag =true;
 	}
 
 	@Then("the residence should be successfully added to the platform")
 	public void the_residence_should_be_successfully_added_to_the_platform() {
 			o.addresidence();
-			assertTrue(ownerislog&&o.addflag&&readinfoflag);
+			assertTrue(ownerislog&&o.addflag&&readinfoflag&&choiceadd);
 		
 	}
 
@@ -60,12 +62,14 @@ public class OwnerTest {
 
 	@Then("the number of tenants in that residence should be displayed")
 	public void the_number_of_tenants_in_that_residence_should_be_displayed() {
+		o.init();
 	   o.numoftenant();
 	   assertTrue(o.numfloorandTen);
 	}
 
 	@Then("the number of floors for that residence should be displayed")
 	public void the_number_of_floors_for_that_residence_should_be_displayed() {
+		o.init();
 		o.numoffloors();
 		   assertTrue(o.numfloorandTen);
 
@@ -89,14 +93,16 @@ public class OwnerTest {
 
 	@Then("the names of the tenants and their contact information should be displayed")
 	public void the_names_of_the_tenants_and_their_contact_information_should_be_displayed() {
-	    // Write code here that turns the phrase above into concrete actions
-	    
+		o.init();
+		o.viewapatmen();
+		assertTrue(o.viewapartflag);
 	}
 
 	@Then("the number of bathrooms and bedrooms, and balcony availability should be shown")
 	public void the_number_of_bathrooms_and_bedrooms_and_balcony_availability_should_be_shown() {
-	    // Write code here that turns the phrase above into concrete actions
-	    
+		o.init();
+		o.viewapatmen();
+		assertTrue(o.viewapartflag);
 	}
 
 

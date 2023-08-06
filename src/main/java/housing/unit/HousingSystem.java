@@ -1,31 +1,29 @@
 package housing.unit;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class HousingSystem {
 	
-	public void viewAdvertisementRequests() {
-        // Implement logic for viewing advertisement requests
+	static Scanner scanner = new Scanner(System.in);
+	static ArrayList <HousingUnit> AdvertisementList=MyData.AdvertisementList();
+	static ArrayList <HousingUnit> HousingUnitList=MyData.getHousingUnitList() ;
+    public static void printData(List<HousingUnit> list) {
+    	for( HousingUnit house: list) {
+     	   System.out.println(house.toString());
+        }
+    	
     }
-
-    public void acceptAdvertisement() {
-        // Implement logic for accepting advertisement
-    }
-
-    public void rejectAdvertisement() {
-        // Implement logic for rejecting advertisement
-    }
-
     public static void viewReservations() {
-       for( HousingUnit house: MyApp.ReservationsList()) {
-    	   System.out.println(house.toString());
-       }
+    	
+    	printData(MyData.ReservationsList());
+    	if(MyData.ReservationsList().isEmpty()) {
+			System.out.println("No Reservations");
+			return;}
     }
 
-    public void addAndAdvertiseHousingUnit() {
-        // Implement logic for adding and advertising a housing unit
-    }
-
+ 
     public static void modifyHousingData() {
     	ModifyHouseUnit.modifyAdmin();
     	           }
@@ -34,6 +32,89 @@ public class HousingSystem {
         System.out.println("Exiting the Housing System. Goodbye!");
     }
 	
-  
+    public static HousingUnit addUnit() {
+    	Scanner scanner = new Scanner(System.in);
+    	    System.out.println("Enter the id:");
+            int iD = scanner.nextInt();
+            scanner.nextLine();
 
+            System.out.println("Enter the location:");
+            String location = scanner.nextLine();
+
+            System.out.println("Enter the photo:");
+            String photo = scanner.nextLine();
+
+            System.out.println("Enter the rent:");
+            double rent = scanner.nextDouble();
+            scanner.nextLine();
+
+            System.out.println("Enter the number of floors:");
+            int numberOfFloors = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.println("Enter available services:");
+            String availableServices = scanner.nextLine();
+
+            System.out.println("Is the residence for Students? (true/false):");
+            boolean Studentflag = scanner.nextBoolean();
+            scanner.nextLine();
+         
+
+            Apartments A=new Apartments();
+            HousingUnit unit = new HousingUnit(iD, location, photo, rent, 0, numberOfFloors,
+                                               availableServices, true, A, Studentflag);
+         MyData.addHousingUnitList(unit);
+            System.out.println("The unit is added");
+            return unit;
+           
+    	}
+
+	public static void viewAdvertisementRequest() {
+		
+		HousingSystem.printData(AdvertisementList);
+		if(AdvertisementList.isEmpty()) {
+			System.out.println("No new Advertisement requsts");
+			return;}
+		System.out.println("1.Accept a housing advertisement");
+        System.out.println("2.Reject a housing advertisement");
+        int desicion=Integer.parseInt(scanner.next());
+        System.out.println("Enter the ID");
+        if(desicion==1)
+        	acceptAdvertisementRequest();
+        else if(desicion==2)
+        	acceptAdvertisementRequest();
+        else return;
+	}
+
+	static HousingUnit FindHouse(List<HousingUnit> list) {
+		  int  id=Integer.parseInt(scanner.next()); // Consume the newline character
+		  HousingUnit houseR = null;
+		  for(HousingUnit house:list) {
+				if(house.getId()==id) {
+					
+					houseR=house;
+				}
+			}
+			return houseR;
+			
+	}
+	public static HousingUnit acceptAdvertisementRequest() {
+		  HousingUnit houseR = FindHouse( AdvertisementList);
+		  AdvertisementList.remove(houseR);
+			HousingUnitList.add(houseR);
+		  MyData.setHousingUnitList(HousingUnitList);
+		  System.out.println("Advertisement Accepted");
+		return houseR;
+	}
+
+	public static HousingUnit rejectAdvertisementRequest() {
+		 HousingUnit houseR = FindHouse( AdvertisementList);
+		  AdvertisementList.remove(houseR);
+		  System.out.println("Advertisement Rejected");
+		return houseR;
+	}
+
+    
+    
+    
 }

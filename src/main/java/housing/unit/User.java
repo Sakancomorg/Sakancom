@@ -1,4 +1,4 @@
-package Sakancom;
+package housing.unit;
 
 public class User {
 	public String name;

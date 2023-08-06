@@ -5,11 +5,12 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import Sakancom.AdminClass;
+import housing.unit.AdminClass;
 import housing.unit.HouseExist;
+import housing.unit.HousingSystem;
 import housing.unit.HousingUnit;
 import housing.unit.ModifyHouseUnit;
-import housing.unit.MyApp;
+import housing.unit.MyData;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,17 +20,17 @@ public class HousingUnitsTest {
 	
 
 private boolean HouseIsExist;
-MyApp obj=null ;
+MyData obj=null ;
 HousingUnit EnteredHouse;
 HousingUnit ModifiesHouseBefore;
 HousingUnit ModifiesHouseAfter;
 ArrayList <HousingUnit> HousingUnitList;
 ModifyHouseUnit MH ;
-public HousingUnitsTest(MyApp obj,ModifyHouseUnit MH) {
+public HousingUnitsTest(MyData obj,ModifyHouseUnit MH) {
 		super();
 		this.obj= obj;
-	    this.EnteredHouse=obj.EnteredHouse;
-	    this.HousingUnitList=MyApp.getHousingUnitList();
+	    this.EnteredHouse=HousingSystem.addUnit();
+	    this.HousingUnitList=MyData.getHousingUnitList();
 	    this.MH=MH;
 	    ModifyHouseUnit.modifyAdmin();
 	    this.ModifiesHouseBefore= ModifyHouseUnit.housingUnitToModify;

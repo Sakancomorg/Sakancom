@@ -8,9 +8,10 @@ public class ModifyHouseUnit {
 	 static int index;
 	public static void modify()
 	{
-		 
-		 housingUnitToModify = HousingUnit.findHousingUnitById();
-		 index=MyApp.HousingUnitList.indexOf(housingUnitToModify);
+		  System.out.println("Enter the ID of the housing unit to modify: ");
+		 housingUnitToModify = HousingUnit.FindHouse(MyData.getHousingUnitList());
+		 if(housingUnitToModify==null) return;
+		 index=MyData.HousingUnitList.indexOf(housingUnitToModify);
 		 Scanner scanner = new Scanner(System.in);
 	        if (housingUnitToModify == null) {
 	            System.out.println("No housing unit found with the given ID.");
@@ -30,9 +31,6 @@ public class ModifyHouseUnit {
 	        double newRent = scanner.nextDouble();
 	        housingUnitToModify.setRent(newRent);
 
-	        System.out.println("Enter the new number of tenants: ");
-	        int newNumberOfTenants = scanner.nextInt();
-	        housingUnitToModify.setNumberOfTenants(newNumberOfTenants);
 
 	        System.out.println("Enter the new number of floors: ");
 	        int newNumberOfFloors = scanner.nextInt();
@@ -40,7 +38,13 @@ public class ModifyHouseUnit {
 
 	        System.out.println("Enter the new available services: ");
 	        String newAvailableServices = scanner.next();
+	        
+	        System.out.println("Is the residence for Students? (true/false):");
+            boolean Studentflag = scanner.nextBoolean();
+            scanner.nextLine();
+         
 	        housingUnitToModify.setAvailableServices(newAvailableServices);
+	        
 
 	        System.out.println("Housing unit with ID " + housingUnitToModify.getId() + " has been modified.");
 	        
@@ -52,10 +56,17 @@ public class ModifyHouseUnit {
 	
 	
 	public static void  modifyAdmin() {
+		 HousingSystem.printData(MyData.getHousingUnitList());
 		 modify();
-		 MyApp.HousingUnitList.set(index,housingUnitToModify);
-		 housingUnitToModifyAfter=MyApp.HousingUnitList.get(index);
-	}
+		 if(housingUnitToModify==null) {
+			  System.out.println("Not Found");
+			  return;
+
+		 }
+			 
+		 MyData.HousingUnitList.set(index,housingUnitToModify);
+		 housingUnitToModifyAfter=MyData.HousingUnitList.get(index);}
+	
 	
 	
 	

@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.List;
 
 import housing.unit.HousingUnit;
-import housing.unit.MyApp;
+import housing.unit.MyData;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

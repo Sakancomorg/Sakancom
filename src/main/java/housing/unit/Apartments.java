@@ -1,4 +1,6 @@
-package Sakancom;
+package housing.unit;
+
+
 
 import java.util.ArrayList;
 
@@ -6,7 +8,62 @@ public class Apartments {
 	private int numberOfBathrooms;
     private int numberOfBedrooms;
     private boolean hasBalcony;
-    private int floor;
+    public int getNumberOfBathrooms() {
+		return numberOfBathrooms;
+	}
+
+	public void setNumberOfBathrooms(int numberOfBathrooms) {
+		this.numberOfBathrooms = numberOfBathrooms;
+	}
+
+	public int getNumberOfBedrooms() {
+		return numberOfBedrooms;
+	}
+
+	public void setNumberOfBedrooms(int numberOfBedrooms) {
+		this.numberOfBedrooms = numberOfBedrooms;
+	}
+
+	public boolean isHasBalcony() {
+		return hasBalcony;
+	}
+
+	public void setHasBalcony(boolean hasBalcony) {
+		this.hasBalcony = hasBalcony;
+	}
+
+	public int getFloor() {
+		return floor;
+	}
+
+	public void setFloor(int floor) {
+		this.floor = floor;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public ArrayList<String> getTenantNames() {
+		return tenantNames;
+	}
+
+	public void setTenantNames(ArrayList<String> tenantNames) {
+		this.tenantNames = tenantNames;
+	}
+
+	public ArrayList<String> getMeansOfCommunication() {
+		return meansOfCommunication;
+	}
+
+	public void setMeansOfCommunication(ArrayList<String> meansOfCommunication) {
+		this.meansOfCommunication = meansOfCommunication;
+	}
+	private int floor;
 
     
     int id;
@@ -14,13 +71,12 @@ public class Apartments {
 	ArrayList<String> meansOfCommunication = new ArrayList<String>();
 
 
-	
-public void a() {
+/*public void a() {
 	tenantNames.add("John Doe");
 	tenantNames.add("Jane Smith");
 	meansOfCommunication.add("Email: john.doe@example.com");
 	meansOfCommunication.add("Phone: +1 123-456-7890");
-}
+}*/
 
     public Apartments(int floor,int id,ArrayList tenantNames,ArrayList meansOfCommunication,int numberOfBathrooms, int numberOfBedrooms, boolean hasBalcony) {
         this.numberOfBathrooms = numberOfBathrooms;
@@ -31,15 +87,9 @@ public void a() {
         this.id=id;    
         this.floor=floor;
     }
+    
     public Apartments() {
-        this.numberOfBathrooms = 0;
-        this.numberOfBedrooms =0;
-        this.hasBalcony = false;
-      
-        this.id=0;    
-        this.floor=0;
     }
-   
     @Override
     public String toString() {
         return "\nID: " + id +
@@ -48,14 +98,6 @@ public void a() {
                 ", Bathrooms: " + numberOfBathrooms +
                 ", Bedrooms: " + numberOfBedrooms +
                 ", Balcony: " + hasBalcony;
-    }
-    public void printA () {
-        System.out.println("\nID: " + id +
-                ", Tenant Names: " + tenantNames +
-                ", Means of Communication: " + meansOfCommunication +
-                ", Bathrooms: " + numberOfBathrooms +
-                ", Bedrooms: " + numberOfBedrooms +
-                ", Balcony: " + hasBalcony);
     }
 
 }

@@ -1,13 +1,16 @@
-package Sakancom;
+package AcceptanceTest;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import io.cucumber.java.BeforeAll;
+
+
+import housing.unit.MyData;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginTest {
-	public Log L=new Log();	
+	public MyData L=new MyData();	
 @Given("{string} status log is {int}")
 public void status_log_is(String string, Integer S) {
 	L.initarrayvalues();
