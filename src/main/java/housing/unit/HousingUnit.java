@@ -189,7 +189,7 @@ public class HousingUnit {
 	}
 
 	public void setA(Apartments a) {
-		a = a;
+		this.a = a;
 	}
 
 
