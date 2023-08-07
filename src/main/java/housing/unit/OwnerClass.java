@@ -297,10 +297,12 @@ public void viewapatmen() {
              tenantNames = apartment.getTenantNames();
              meansOfCommunication = apartment.getMeansOfCommunication();
 
-            for (int i = 0; i < tenantNames.size(); i++) {
-            	logger.info("Tenant Name: " + tenantNames.get(i));
-            	logger.info("Means of Communication: " + meansOfCommunication.get(i));
-            }
+             for (int i = 0; i < tenantNames.size(); i++) {
+            	    String tenantInfo = String.format("Tenant Name: %s, Means of Communication: %s",
+            	                                      tenantNames.get(i), meansOfCommunication.get(i));
+            	    logger.info(tenantInfo);
+            	}
+
 
             logger.info("") ;       }
     } else {
@@ -311,5 +313,4 @@ public void viewapatmen() {
 
     
 }
-
 
