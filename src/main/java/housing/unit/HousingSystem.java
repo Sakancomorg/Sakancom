@@ -93,8 +93,7 @@ public class HousingSystem {
             acceptAdvertisementRequest();
         else if (decision == 2)
             acceptAdvertisementRequest();
-        else
-            return;
+       
     }
 
     static HousingUnit FindHouse(List<HousingUnit> list) {
