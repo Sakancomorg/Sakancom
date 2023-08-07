@@ -30,7 +30,7 @@ public void the_password_is(String pass) {
 	L.initarrayvalues();
 
     for (int i = 0; i < L.userinfo.size(); i++) {
-		if(L.userinfo.get(i).pa.equals(pass)) {
+		if(L.userinfo.get(i).getPa().equals(pass)) {
 			   L.passflag=true;
 		}
 		else {
@@ -48,7 +48,7 @@ public void the_email_is(String E) {
 	L.initarrayvalues();
 
 	for (int i = 0; i < L.userinfo.size(); i++) {
-		if(L.userinfo.get(i).emaill.equals(E)) {
+		if(L.userinfo.get(i).getEmaill().equals(E)) {
 			   L.eflag=true;
 		}
 		else {
