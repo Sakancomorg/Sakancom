@@ -22,7 +22,7 @@ public class HousingSystem {
         printData(MyData.reservationslist());
         if (MyData.reservationslist().isEmpty()) {
             logger.info("No Reservations");
-            return;
+     
         }
     }
 
