@@ -234,8 +234,15 @@ public void init() {
 public void viewresidences() {
 	init();
 	for (HousingUnit unit : houseinfo) {
-		logger.info(unit + ", ");
-    }
+	    String unitInfo = String.format(
+	        "ID: %d, Location: %s, Rent: $%.2f, Tenants: %d, Floors: %d, Services: %s, Accept: %b\n",
+	        unit.getId(), unit.getLocation(), unit.getRent(), unit.getNumberOfTenants(),
+	        unit.getNumberOfFloors(), unit.getAvailableServices(), unit.isReservedFlag()
+	    );
+	    logger.info(unitInfo);
+	    logger.info("Apartments: " + unit.getA().toString()); 
+	}
+
 	viewflag=true;
 	
 }
