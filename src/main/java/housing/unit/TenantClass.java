@@ -16,12 +16,19 @@ public class TenantClass {
     String e;
     private boolean advflag = false;
     Book bookInstance;
-    LoginSteps L = new LoginSteps(scanner);
-    public int choice;
+    private int choice;
     int ch;
     ArrayList<HousingUnit> tenanthouseinfo = new ArrayList<HousingUnit>();
 
-    public TenantClass(Scanner scanner) {
+    public int getChoice() {
+		return choice;
+	}
+
+	public void setChoice(int choice) {
+		this.choice = choice;
+	}
+
+	public TenantClass(Scanner scanner) {
         this.scanner = scanner;
     }
 
@@ -34,7 +41,7 @@ public class TenantClass {
     }
 
     public void tenantmenu() {
-        Scanner scanner = new Scanner(System.in);
+         scanner = new Scanner(System.in);
         do {
             logger.info("========= Tenant Menu =========");
             logger.info("1. View available housing");
@@ -71,10 +78,9 @@ public class TenantClass {
 
     public void viewadvertisementwindow() {
         ArrayList<Furniture> furnitureList = new ArrayList<Furniture>();
-        // TODO Auto-generated method stub
-        Furniture furniture1 = new Furniture("Sofa", "Living Room", "Comfortable three-seater sofa", 500.0, "contact@example.com");
+        Furniture furniture1 = new Furniture("Sofa", "Living Room", "Comfortable three-seater sofa", 500.0, "cot@example.com");
         Furniture furniture2 = new Furniture("Dining Table", "Dining Room", "Wooden dining table with 4 chairs", 300.0, "contact@example.com");
-        Furniture furniture3 = new Furniture("Bed", "Bedroom", "King-size bed with memory foam mattress", 800.0, "contact@example.com");
+        Furniture furniture3 = new Furniture("Bed", "Bedroom", "King-size bed with memory foam mattress", 800.0, "sss@example.com");
 
         furnitureList.add(furniture1);
         furnitureList.add(furniture2);
@@ -132,15 +138,18 @@ public class TenantClass {
 
     public void viewpersonaldata() {
         logger.info("Role: Tenant");
-        logger.info("User Name: " + username);
-        logger.info("Email: " + e);
+        String userInfo = String.format("User Name: %s", username);
+        logger.info(userInfo);
+        String emailInfo = String.format("Email: %s", e);
+        logger.info(emailInfo);
         viewpersonaldataf = true;
     }
 
     public void viewtimetopay() {
         init();
         Time timeToPay = bookInstance.getTime();
-        logger.info("Time to Pay: " + timeToPay);
+        String timeToPayInfo = String.format("Time to Pay: %s", timeToPay);
+        logger.info(timeToPayInfo);
         viewtimetopayf = true;
     }
 
