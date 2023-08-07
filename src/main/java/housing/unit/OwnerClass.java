@@ -7,7 +7,6 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 public class OwnerClass {
     private static final Logger logger = Logger.getLogger(OwnerClass.class.getName());
-
 	List<HousingUnit> houseinfo = new ArrayList<HousingUnit>();
 	List<String> tenantNames = new ArrayList<String>();
 	List<String> meansOfCommunication = new ArrayList<String>();
@@ -27,8 +26,6 @@ public class OwnerClass {
         this.scanner = scanner;
     }
      public int choice;
-    
-
 public  void ownermenu() {
 
     do {
