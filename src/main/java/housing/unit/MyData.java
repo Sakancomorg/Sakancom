@@ -2,7 +2,6 @@ package housing.unit;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class MyData {
 	
@@ -32,44 +31,44 @@ public class MyData {
 	public void setEflag(boolean eflag) {
 		this.eflag = eflag;
 	}
-	public ArrayList<User> userinfo = new ArrayList<User>();
-  static ArrayList <HousingUnit> HousingUnitList=new ArrayList<HousingUnit>() ;
-   static ArrayList <HousingUnit> AdvertisementList=new ArrayList<HousingUnit>() ;
-   static ArrayList <HousingUnit> ReservationsList=new ArrayList<HousingUnit>() ;
+	public List<User> userinfo = new ArrayList<User>();
+  static ArrayList <HousingUnit> housingunitlist=new ArrayList<HousingUnit>() ;
+   static ArrayList <HousingUnit> advertisementlist=new ArrayList<HousingUnit>() ;
+   static ArrayList <HousingUnit> reservationslist=new ArrayList<HousingUnit>() ;
   
    public static void setHousingUnitList(ArrayList<HousingUnit> housingUnitList) {
-	HousingUnitList = housingUnitList;
+	   housingunitlist = housingUnitList;
 }
 public static void setAdvertisementList(ArrayList<HousingUnit> advertisementList) {
-	AdvertisementList = advertisementList;
+	advertisementlist = advertisementList;
 }
 public static void setReservationsList(ArrayList<HousingUnit> reservationsList) {
-	ReservationsList = reservationsList;
+	reservationslist = reservationsList;
 }
 
 
 public static void addReservationsList(HousingUnit unit) {
-	ReservationsList.add(unit);
+	reservationslist.add(unit);
 }
 
 
 public static void addHousingUnitList(HousingUnit unit) {
-	HousingUnitList.add(unit);
+	housingunitlist.add(unit);
 }
 
 public static void addAdvertisementList(HousingUnit unit) {
-	AdvertisementList.add(unit);
+	advertisementlist.add(unit);
 }
 
 
    public static ArrayList<HousingUnit> getHousingUnitList() {
-	return HousingUnitList;
+	return housingunitlist;
 	    
 	
    }
    public static ArrayList<HousingUnit> AdvertisementList() {
 	 
-	   return AdvertisementList;
+	   return advertisementlist;
 	    
 	
    }
@@ -81,7 +80,7 @@ public static void addAdvertisementList(HousingUnit unit) {
 	} 
    
    public static ArrayList<HousingUnit> ReservationsList() {
-	return ReservationsList;
+	return reservationslist;
 	    
 	
    }
