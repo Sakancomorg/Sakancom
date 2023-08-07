@@ -12,8 +12,8 @@ public class TenantSystem {
 
 	public static void book() {
 		HousingUnit unit =HousingSystem.FindHouse(MyData.getAvilableHousing());
-		int index=MyData.HousingUnitList.indexOf(unit);
-		 MyData.HousingUnitList.get(index).setReservedFlag(true);
+		int index=MyData.housingunitlist.indexOf(unit);
+		 MyData.housingunitlist.get(index).setReservedFlag(true);
 		MyData.addReservationsList(unit);
 		logger.info("The house is booked");
 	}
