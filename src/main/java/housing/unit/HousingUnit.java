@@ -6,30 +6,95 @@ import java.util.Scanner;
 
 public class HousingUnit {
 	
-    private String location;
+	private String location;
     private String photo;
     private double rent;
     private int numberOfTenants;
     private int numberOfFloors;
-    int id;
+    private int id;
     private String availableServices;
     private boolean reservedFlag;
     private Apartments A;
     private TenantClass t;
     private boolean studentHouse;
-    public HousingUnit(int id, String location, String photo, double rent, int numberOfTenants, int numberOfFloors,
-             String availableServices, boolean reservedFlag, Apartments A,boolean studentHouse) {
-    this.location = location;
-    this.photo = photo;
-    this.rent = rent;
-    this.numberOfTenants = numberOfTenants;
-    this.numberOfFloors = numberOfFloors;
-    this.availableServices = availableServices;
-    this.reservedFlag = reservedFlag;
-    this.id = id;
-    this.A = A;
-    this.studentHouse=studentHouse;
-}
+
+    private HousingUnit(String location, String photo, double rent, int numberOfTenants, int numberOfFloors,
+                        String availableServices, boolean reservedFlag, Apartments A, boolean studentHouse, int id) {
+        this.location = location;
+        this.photo = photo;
+        this.rent = rent;
+        this.numberOfTenants = numberOfTenants;
+        this.numberOfFloors = numberOfFloors;
+        this.availableServices = availableServices;
+        this.reservedFlag = reservedFlag;
+        this.A = A;
+        this.studentHouse = studentHouse;
+        this.id = id;
+    }
+
+    public static class Builder {
+        private String location;
+        private String photo;
+        private double rent;
+        private int numberOfTenants;
+        private int numberOfFloors;
+        private int id;
+        private String availableServices;
+        private boolean reservedFlag;
+        private Apartments A;
+        private TenantClass t;
+        private boolean studentHouse;
+
+        public Builder(String location, int id) {
+            this.location = location;
+            this.id = id;
+        }
+
+        public Builder setPhoto(String photo) {
+            this.photo = photo;
+            return this;
+        }
+
+        public Builder setRent(double rent) {
+            this.rent = rent;
+            return this;
+        }
+
+        public Builder setNumberOfTenants(int numberOfTenants) {
+            this.numberOfTenants = numberOfTenants;
+            return this;
+        }
+
+        public Builder setNumberOfFloors(int numberOfFloors) {
+            this.numberOfFloors = numberOfFloors;
+            return this;
+        }
+
+        public Builder setAvailableServices(String availableServices) {
+            this.availableServices = availableServices;
+            return this;
+        }
+
+        public Builder setReservedFlag(boolean reservedFlag) {
+            this.reservedFlag = reservedFlag;
+            return this;
+        }
+
+        public Builder setApartments(Apartments A) {
+            this.A = A;
+            return this;
+        }
+
+        public Builder setStudentHouse(boolean studentHouse) {
+            this.studentHouse = studentHouse;
+            return this;
+        }
+
+        public HousingUnit build() {
+            return new HousingUnit(location, photo, rent, numberOfTenants, numberOfFloors,
+                    availableServices, reservedFlag, A, studentHouse, id);
+        }
+    }
 
     
     public boolean isReservedFlag() {
@@ -61,121 +126,71 @@ public class HousingUnit {
 	}
 
 
-
-
 	public void setLocation(String location) {
 		this.location = location;
 	}
-
-
-
 
 	public String getPhoto() {
 		return photo;
 	}
 
-
-
-
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-
-
-
 
 	public double getRent() {
 		return rent;
 	}
 
-
-
-
 	public void setRent(double rent) {
 		this.rent = rent;
 	}
-
-
-
 
 	public int getNumberOfTenants() {
 		return numberOfTenants;
 	}
 
-
-
-
 	public void setNumberOfTenants(int numberOfTenants) {
 		this.numberOfTenants = numberOfTenants;
 	}
-
-
-
 
 	public int getNumberOfFloors() {
 		return numberOfFloors;
 	}
 
-
-
-
 	public void setNumberOfFloors(int numberOfFloors) {
 		this.numberOfFloors = numberOfFloors;
 	}
-
-
-
 
 	public int getId() {
 		return id;
 	}
 
-
-
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
-
 
 	public String getAvailableServices() {
 		return availableServices;
 	}
 
 
-
-
 	public void setAvailableServices(String availableServices) {
 		this.availableServices = availableServices;
 	}
-
-
-
 
 	public boolean isReserved() {
 		return reservedFlag;
 	}
 
 
-
-
-
-
-
 	public Apartments getA() {
 		return A;
 	}
 
-
-
-
 	public void setA(Apartments a) {
 		A = a;
 	}
-
-
 
 
 	   @Override
@@ -207,11 +222,10 @@ public class HousingUnit {
 
     }
   
- 
     
     static HousingUnit FindHouse(ArrayList <HousingUnit> list) {
     	 Scanner scanner = new Scanner(System.in);
-		  int  id=Integer.parseInt(scanner.next()); // Consume the newline character
+		  int  id=Integer.parseInt(scanner.next()); 
 		  HousingUnit houseR = null;
 		  for(HousingUnit house:list) {
 				if(house.getId()==id) {
