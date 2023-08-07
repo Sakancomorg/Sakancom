@@ -108,7 +108,7 @@ public class HousingSystem {
     }
 
     public static HousingUnit acceptAdvertisementRequest() {
-        HousingUnit houseR = FindHouse(advertisementlist);
+        HousingUnit houseR = findHouse(advertisementlist);
         advertisementlist.remove(houseR);
         housingunitlist.add(houseR);
         MyData.setHousingUnitList(housingunitlist);
@@ -117,7 +117,7 @@ public class HousingSystem {
     }
 
     public static HousingUnit rejectAdvertisementRequest() {
-        HousingUnit houseR = FindHouse(advertisementlist);
+        HousingUnit houseR = findHouse(advertisementlist);
         advertisementlist.remove(houseR);
         logger.info("Advertisement Rejected");
         return houseR;
