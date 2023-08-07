@@ -1,34 +1,34 @@
 package housing.unit;
 
 public class Furniture {
-	private String FurnitureName;
-	private String FurnitureCategory;
-	private String Description;
+	private String furnitureName;
+	private String furnitureCategory;
+	private String description;
 	private double price;
 	private String ContactInfo;
 	
 	public String getFurnitureName() {
-		return FurnitureName;
+		return furnitureName;
 	}
 
 	public void setFurnitureName(String furnitureName) {
-		FurnitureName = furnitureName;
+		furnitureName = furnitureName;
 	}
 
 	public String getFurnitureCategory() {
-		return FurnitureCategory;
+		return furnitureCategory;
 	}
 
 	public void setFurnitureCategory(String furnitureCategory) {
-		FurnitureCategory = furnitureCategory;
+		furnitureCategory = furnitureCategory;
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		description = description;
 	}
 
 	public double getPrice() {
@@ -48,9 +48,9 @@ public class Furniture {
 	}
 
 	public Furniture (String FurnitureName ,String FurnitureCategory ,String Description ,double price ,String ContactInfo){
-		this.FurnitureCategory=FurnitureCategory;
-		this.FurnitureName=FurnitureName;
-		this.Description=Description;
+		this.furnitureCategory=FurnitureCategory;
+		this.furnitureName=FurnitureName;
+		this.description=Description;
 		this.price=price;
 		this.ContactInfo=ContactInfo;	
 	}
