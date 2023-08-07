@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
-import java.util.logging.Level;
 public class OwnerClass {
     private static final Logger logger = Logger.getLogger(OwnerClass.class.getName());
 
@@ -62,7 +61,7 @@ public class OwnerClass {
     public OwnerClass(Scanner scanner) {
         this.scanner = scanner;
     }
-     public int choice;
+     private int choice;
     
 
 public  void ownermenu() {
@@ -105,6 +104,12 @@ public  void ownermenu() {
         }
     } while (choice != 5);
 
+}
+public int getChoice() {
+	return choice;
+}
+public void setChoice(int choice) {
+	this.choice = choice;
 }
 public void addresidence() {
 	    readinfoflag = true;
@@ -185,7 +190,7 @@ public void init() {
     HousingUnit house = new HousingUnit.Builder(location1, iD1)
             .setPhoto(photo1)
             .setRent(rent1)
-            .setNumberOfTenants(0)
+            .setNumberOfTenants(numberOfTenants1)
             .setNumberOfFloors(numberOfFloors1)
             .setAvailableServices(availableServices1)
             .setReservedFlag(acceptflag1)
@@ -222,6 +227,8 @@ public void init() {
             .setApartments(a2)
             .setStudentHouse(true)
             .build();
+    houseinfo.add(house2);
+
 
 }
 public void viewresidences() {
@@ -278,8 +285,8 @@ public void viewapatmen() {
              logger.info("Balcony Availability: " + apartment.isHasBalcony());
 
              logger.info("Tenants in the Apartment:");
-            List<String> tenantNames = apartment.getTenantNames();
-            List<String> meansOfCommunication = apartment.getMeansOfCommunication();
+             tenantNames = apartment.getTenantNames();
+             meansOfCommunication = apartment.getMeansOfCommunication();
 
             for (int i = 0; i < tenantNames.size(); i++) {
             	logger.info("Tenant Name: " + tenantNames.get(i));
