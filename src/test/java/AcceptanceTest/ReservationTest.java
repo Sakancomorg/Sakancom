@@ -18,7 +18,7 @@ public class ReservationTest {
 
    static Boolean ShowFlag;
    AdminClass adminClass;
-   static List <HousingUnit> ReservationsList=MyData.ReservationsList();
+   static List <HousingUnit> ReservationsList=MyData.reservationslist();
 
 
 public ReservationTest(AdminClass adminClass) {
@@ -46,3 +46,4 @@ public void adminCanViewAllReservationsMadeThroughTheSystem() {
 
 
 }
+
