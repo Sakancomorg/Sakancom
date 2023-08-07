@@ -10,7 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class TenantTest {
+public class TenantTesting{
 	Scanner scanner = new Scanner(System.in);
 	TenantClass T=new TenantClass(scanner);
 	boolean sel =false;
