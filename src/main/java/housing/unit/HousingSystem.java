@@ -61,11 +61,21 @@ public class HousingSystem {
          
 
             Apartments A=new Apartments();
-            HousingUnit unit = new HousingUnit(iD, location, photo, rent, 0, numberOfFloors,
-                                               availableServices, true, A, Studentflag);
-         MyData.addHousingUnitList(unit);
+       
+            HousingUnit house = new HousingUnit.Builder(location, iD)
+                    .setPhoto(photo)
+                    .setRent(rent)
+                    .setNumberOfTenants(0)
+                    .setNumberOfFloors(numberOfFloors)
+                    .setAvailableServices(availableServices)
+                    .setReservedFlag(false)
+                    .setApartments(A)
+                    .setStudentHouse(Studentflag)
+                    .build();
+            
+         MyData.addHousingUnitList(house);
             System.out.println("The unit is added");
-            return unit;
+            return house;
            
     	}
 
