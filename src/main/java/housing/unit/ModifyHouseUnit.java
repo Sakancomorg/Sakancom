@@ -4,12 +4,14 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class ModifyHouseUnit {
+	private ModifyHouseUnit() {
+		
+	}
     private static final Logger logger = Logger.getLogger(ModifyHouseUnit.class.getName());
 
-    public static HousingUnit housingUnitToModify;
-    public static HousingUnit housingUnitToModifyAfter;
-    static int index;
-
+    private static HousingUnit housingUnitToModify;
+    private static HousingUnit housingUnitToModifyAfter; 
+    private static int index; 
     public static void modify() {
         logger.info("Enter the ID of the housing unit to modify: ");
         housingUnitToModify = HousingUnit.FindHouse(MyData.getHousingUnitList());
@@ -20,7 +22,6 @@ public class ModifyHouseUnit {
             logger.info("No housing unit found with the given ID.");
             return;
         }
-
         logger.info("Enter the new location: ");
         String newLocation = scanner.next();
         housingUnitToModify.setLocation(newLocation);
@@ -41,7 +42,7 @@ public class ModifyHouseUnit {
         String newAvailableServices = scanner.next();
 
         logger.info("Is the residence for Students? (true/false):");
-        boolean Studentflag = scanner.nextBoolean();
+        boolean studentflag = scanner.nextBoolean();
         scanner.nextLine();
 
         housingUnitToModify.setAvailableServices(newAvailableServices);
@@ -60,5 +61,15 @@ public class ModifyHouseUnit {
         MyData.housingunitlist.set(index, housingUnitToModify);
         housingUnitToModifyAfter = MyData.housingunitlist.get(index);
     }
-}
+    public static HousingUnit getHousingUnitToModify() {
+        return housingUnitToModify;
+    }
 
+    public static HousingUnit getHousingUnitToModifyAfter() {
+        return housingUnitToModifyAfter;
+    }
+
+    public static int getIndex() {
+        return index;
+    }
+}
