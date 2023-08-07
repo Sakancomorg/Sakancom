@@ -47,12 +47,12 @@ public class Furniture {
 		contactInfo = contactInfo;
 	}
 
-	public Furniture (String FurnitureName ,String FurnitureCategory ,String Description ,double price ,String ContactInfo){
-		this.furniturecategory=FurnitureCategory;
-		this.furniturename=FurnitureName;
-		this.description=Description;
+	public Furniture (String furniturename ,String furniturecategory ,String description ,double price ,String contactInfo){
+		this.furniturecategory=furniturecategory;
+		this.furniturename=furniturename;
+		this.description=description;
 		this.price=price;
-		this.contactInfo=ContactInfo;	
+		this.contactInfo=contactInfo;	
 	}
 
 }
