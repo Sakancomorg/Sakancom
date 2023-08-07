@@ -15,11 +15,11 @@ public class MyApp {
 		do {
 		LS= new LoginSteps(scanner);
 		LS.init();
-		if(LS.adminflag)
+		if(LS.isAdminflag())
 			a.adminmenu();
-		else if(LS.ownerflag)
+		else if(LS.isOwnerflag())
 			o.ownermenu();
-		else if(LS.tenantflag) 
+		else if(LS.isTenantflag()) 
 			t.tenantmenu();
 		
 		System.out.println("Close the App?");
