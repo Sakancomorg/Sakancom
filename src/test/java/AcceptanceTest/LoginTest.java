@@ -10,14 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginTest {
-<<<<<<< HEAD:src/test/java/AcceptanceTest/LoginTest.java
 	public MyData L=new MyData();	
-=======
-	public boolean adminflag;
-	public boolean ownerflag;
-	public boolean tenantflag;
-	public Log L=new Log();	
->>>>>>> 7f7b7a8a035927cb4c78f067f5c90cb26b2a4afe:src/test/java/Sakancom/LoginTest.java
 @Given("{string} status log is {int}")
 public void status_log_is(String string, Integer S) {
 	L.initarrayvalues();
@@ -27,18 +20,8 @@ public void status_log_is(String string, Integer S) {
 		}
 		else {
 			L.islog=true;
-
-	        if(L.userinfo.get(i).role.equals("admin")) {
-	             adminflag=true;
-	        }
-	        else if(L.userinfo.get(i).role.equals("owner")) {
-	        	ownerflag=true;
-	        }
-	        else if(L.userinfo.get(i).role.equals("tenant")) {
-	        	tenantflag=true;
-	        }
 		}
-	        
+		
 	}
 }
 
