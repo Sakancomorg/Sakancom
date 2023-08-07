@@ -92,11 +92,11 @@ public class HousingSystem {
         if (decision == 1)
             acceptAdvertisementRequest();
         else if (decision == 2)
-            acceptAdvertisementRequest();
+           rejectAdvertisementRequest()
        
     }
 
-    static HousingUnit FindHouse(List<HousingUnit> list) {
+    static HousingUnit findHouse(List<HousingUnit> list) {
         int id = Integer.parseInt(scanner.next()); 
         HousingUnit houseR = null;
         for (HousingUnit house : list) {
