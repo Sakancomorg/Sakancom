@@ -62,9 +62,9 @@ public class LoginSteps {
         boolean nameflag = false;
         boolean pasflag = false;
         for (int i = 0; i < L.userinfo.size(); i++) {
-            if (L.userinfo.get(i).name.equals(username)) {
+            if (L.userinfo.get(i).getName().equals(username)) {
                 nameflag = true;
-                if (L.userinfo.get(i).pa.equals(password)) {
+                if (L.userinfo.get(i).getPa().equals(password)) {
                     pasflag = true;
                     if (L.userinfo.get(i).role.equals("admin")) {
                         adminflag = true;
