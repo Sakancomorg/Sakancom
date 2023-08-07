@@ -27,7 +27,6 @@ public ReservationTest(AdminClass adminClass) {
 }
 @Given("there are existing reservations in the system")
 public void thereAreExistingReservationsInTheSystem() {
-    // Write code here that turns the phrase above into concrete actions
  assertTrue(ReservationsList.size()>0);
 
   
@@ -36,14 +35,12 @@ public void thereAreExistingReservationsInTheSystem() {
 public void theAdminAccessesTheReservationsSection() {
 	
 	adminClass.adminmenu();
-	ShowFlag=AdminClass.re;
-    // Write code here that turns the phrase above into concrete actions
+	ShowFlag=adminClass.getRe();
   
 }
 @Then("Admin can view all reservations made through the system")
 public void adminCanViewAllReservationsMadeThroughTheSystem() {
 	assertTrue(ShowFlag);
-    // Write code here that turns the phrase above into concrete actions
     
 }
 
