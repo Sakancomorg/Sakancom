@@ -14,7 +14,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class AvailableHousingTest {
+public class AvailableHousingTesting {
 
 	  private int availability;
 	    private int studentHousingAvailability;
