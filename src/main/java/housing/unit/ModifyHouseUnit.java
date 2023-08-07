@@ -14,7 +14,7 @@ public class ModifyHouseUnit {
         logger.info("Enter the ID of the housing unit to modify: ");
         housingUnitToModify = HousingUnit.FindHouse(MyData.getHousingUnitList());
         if (housingUnitToModify == null) return;
-        index = MyData.HousingUnitList.indexOf(housingUnitToModify);
+        index = MyData.housingunitlist.indexOf(housingUnitToModify);
         Scanner scanner = new Scanner(System.in);
         if (housingUnitToModify == null) {
             logger.info("No housing unit found with the given ID.");
@@ -57,7 +57,7 @@ public class ModifyHouseUnit {
             return;
         }
 
-        MyData.HousingUnitList.set(index, housingUnitToModify);
-        housingUnitToModifyAfter = MyData.HousingUnitList.get(index);
+        MyData.housingunitlist.set(index, housingUnitToModify);
+        housingUnitToModifyAfter = MyData.housingunitlist.get(index);
     }
 }
