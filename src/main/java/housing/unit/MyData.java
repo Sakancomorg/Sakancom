@@ -87,7 +87,7 @@ public static void addAdvertisementList(HousingUnit unit) {
 public static List<HousingUnit> getAvilableHousing() {
 	 List<HousingUnit> availableListings=new ArrayList<HousingUnit>();
 	 for (HousingUnit house :  getHousingUnitList()) {
-	        if (!house.isReserved()) {
+	        if (!house.isReservedFlag()) {
 	             availableListings.add(house);
 	        }
 	       
