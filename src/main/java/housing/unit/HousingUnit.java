@@ -1,6 +1,7 @@
 package housing.unit;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -223,7 +224,7 @@ public class HousingUnit {
     }
   
     
-    static HousingUnit FindHouse(ArrayList <HousingUnit> list) {
+    static HousingUnit FindHouse(List <HousingUnit> list) {
     	 Scanner scanner = new Scanner(System.in);
 		  int  id=Integer.parseInt(scanner.next()); 
 		  HousingUnit houseR = null;
@@ -237,4 +238,19 @@ public class HousingUnit {
 			
 	}
 
+
+	
+	
+
 }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
