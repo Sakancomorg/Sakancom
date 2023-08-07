@@ -4,8 +4,7 @@ package AcceptanceTest;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
-
-
+import java.util.List;
 
 import housing.unit.AdminClass;
 import housing.unit.HousingUnit;
@@ -19,7 +18,7 @@ public class ReservationTest {
 
    static Boolean ShowFlag;
    AdminClass adminClass;
-   static ArrayList <HousingUnit> ReservationsList=MyData.ReservationsList();
+   static List <HousingUnit> ReservationsList=MyData.ReservationsList();
 
 
 public ReservationTest(AdminClass adminClass) {
