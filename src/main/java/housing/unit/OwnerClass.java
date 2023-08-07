@@ -180,7 +180,7 @@ public void init() {
     ArrayList<String> meansOfCommunication1 = new ArrayList<String>();
     meansOfCommunication1.add("Email");
 
-    Apartments A1 = new Apartments(floornum1, ida1, tenantNames1, meansOfCommunication1, 5, 3, true);
+    Apartments a1 = new Apartments(floornum1, ida1, tenantNames1, meansOfCommunication1, 5, 3, true);
 
     HousingUnit house = new HousingUnit.Builder(location1, iD1)
             .setPhoto(photo1)
@@ -189,7 +189,7 @@ public void init() {
             .setNumberOfFloors(numberOfFloors1)
             .setAvailableServices(availableServices1)
             .setReservedFlag(acceptflag1)
-            .setApartments(A1)
+            .setApartments(a1)
             .setStudentHouse(true)
             .build();
     
@@ -210,7 +210,7 @@ public void init() {
     ArrayList<String> meansOfCommunication2 = new ArrayList<String>();
     meansOfCommunication2.add("Phone");
 
-    Apartments A2 = new Apartments(floornum2, ida2, tenantNames2, meansOfCommunication2, 4, 2, false);
+    Apartments a2 = new Apartments(floornum2, ida2, tenantNames2, meansOfCommunication2, 4, 2, false);
 
     HousingUnit house2 = new HousingUnit.Builder(location2, iD2)
             .setPhoto(photo2)
@@ -219,7 +219,7 @@ public void init() {
             .setNumberOfFloors(numberOfFloors2)
             .setAvailableServices(availableServices2)
             .setReservedFlag(acceptflag2)
-            .setApartments(A2)
+            .setApartments(a2)
             .setStudentHouse(true)
             .build();
 
@@ -245,13 +245,13 @@ public void numoftenant() {
     logger.info("The number of tenant is : "+num);	
 }
 public void numoffloors() {
-	int N=0;
+	int n=0;
 	for(int i=1;i<houseinfo.size();i++) {
     	if(idresidence==i) {
-            N=houseinfo.get(i).getNumberOfFloors();
+            n=houseinfo.get(i).getNumberOfFloors();
     	}
     numfloorandTen =true;
-    logger.info(" and the number of floors is : "+N);	
+    logger.info(" and the number of floors is : "+n);	
     
 }
 }
