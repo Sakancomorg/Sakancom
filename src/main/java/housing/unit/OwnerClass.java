@@ -240,7 +240,8 @@ public void viewresidences() {
 	        unit.getNumberOfFloors(), unit.getAvailableServices(), unit.isReservedFlag()
 	    );
 	    logger.info(unitInfo);
-		    logger.info("Apartments: " + unit.getA().toString()); 
+	    String apartmentsInfo = String.format("Apartments: %s", unit.getA().toString());
+	    logger.info(apartmentsInfo);
 
 	    
 	}
@@ -306,7 +307,7 @@ public void viewapatmen() {
 
             logger.info("") ;       }
     } else {
-    	logger.info("No apartments found on floor number " + idf);
+    	logger.info(String.format("No apartments found on floor number %d", idf));
     }
 
 	}   
