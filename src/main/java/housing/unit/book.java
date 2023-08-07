@@ -3,13 +3,13 @@ package housing.unit;
 
 import java.sql.Time;
 
-public class book {
+public class Book {
 	private double rent;
 	private Time time;
 	private String ownername;
 	private int number;
 	private String email;
-	book(double rent,Time time,String ownername,int number,String email){
+	public Book(double rent,Time time,String ownername,int number,String email){
 		this.rent=rent;
 		this.time=time;
 		this.ownername=ownername;
