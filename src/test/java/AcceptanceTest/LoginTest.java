@@ -9,7 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LoginTest {
+public class Login {
 	public MyData L=new MyData();
 	boolean islog=false;
 	boolean passflag=false;
