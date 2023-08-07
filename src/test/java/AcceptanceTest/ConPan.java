@@ -23,7 +23,7 @@ public class ConPan {
 
 	@When("I access the tenant control panel")
 	public void i_access_the_tenant_control_panel() {
-		if(T.choice==7) {
+		if(T.getChoice()==7) {
 			choice=true;
 		}
 	}
