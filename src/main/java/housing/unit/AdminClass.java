@@ -7,7 +7,7 @@ public class AdminClass {
     private static final Logger logger = Logger.getLogger(AdminClass.class.getName());
     private static Scanner scanner = new Scanner(System.in);
     private int choice;
-    public  Boolean re;
+    private Boolean re;
 
     public void adminmenu() {
         do {
@@ -43,4 +43,12 @@ public class AdminClass {
             }
         } while (choice != 5);
     }
+
+	public Boolean getRe() {
+		return re;
+	}
+
+	public void setRe(Boolean re) {
+		this.re = re;
+	}
 }
