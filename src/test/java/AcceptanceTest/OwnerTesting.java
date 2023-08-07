@@ -7,7 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class OwnerTest {
+public class OwnerTesting {
     Scanner scanner = new Scanner(System.in);
 	private boolean ownerislog=false;
 	private boolean readinfoflag=false;
