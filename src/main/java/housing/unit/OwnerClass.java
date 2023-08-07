@@ -270,7 +270,6 @@ public void viewapatmen() {
     }
 
     if (!apartmentsList.isEmpty()) {
-        viewapartflag = true;
 
         for (Apartments apartment : apartmentsList) {
         	 logger.info("Floor Number: " + apartment.getFloor());
