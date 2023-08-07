@@ -14,7 +14,7 @@ public class ModifyHouseUnit {
     private static int index; 
     public static void modify() {
         logger.info("Enter the ID of the housing unit to modify: ");
-        housingUnitToModify = HousingSystem.FindHouse(MyData.getHousingUnitList());
+        housingUnitToModify = HousingSystem.findHouse(MyData.getHousingUnitList());
         if (housingUnitToModify == null) {
 		 logger.info("No housing unit found with the given ID.");
 		return;
