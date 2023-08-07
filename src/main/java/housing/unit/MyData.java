@@ -66,7 +66,7 @@ public static void addAdvertisementList(HousingUnit unit) {
 	    
 	
    }
-   public static List<HousingUnit> AdvertisementList() {
+   public static List<HousingUnit> advertisementlist() {
 	 
 	   return advertisementlist;
 	    
@@ -79,7 +79,7 @@ public static void addAdvertisementList(HousingUnit unit) {
 	        userinfo.add(new User("admin","tala","tala@gmail.com","7676",1));
 	} 
    
-   public static List<HousingUnit> ReservationsList() {
+   public static List<HousingUnit> reservationslist() {
 	return reservationslist;
 	    
 	
