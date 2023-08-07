@@ -178,10 +178,6 @@ public class HousingUnit {
 		this.availableServices = availableServices;
 	}
 
-	public boolean isReserved() {
-		return reservedFlag;
-	}
-
 
 	public Apartments getA() {
 		return a;
