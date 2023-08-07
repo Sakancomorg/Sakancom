@@ -7,25 +7,64 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 public class OwnerClass {
     private static final Logger logger = Logger.getLogger(OwnerClass.class.getName());
+
 	List<HousingUnit> houseinfo = new ArrayList<HousingUnit>();
 	List<String> tenantNames = new ArrayList<String>();
 	List<String> meansOfCommunication = new ArrayList<String>();
 	Apartments A;
 	private Scanner scanner;
-	public boolean readinfoflag=false;
-	public boolean addflag=false;
-	public boolean viewflag=false;
-	public boolean numfloorandTen=false;
+	private boolean readinfoflag=false;
+	private boolean addflag=false;
+	private boolean viewflag=false;
+	private boolean numfloorandTen=false;
 	int idresidence=0;
 	int idapart=0;
 	int floornum=0;
-	public boolean viewapartflag=false;
-	public boolean c=false;
+	public boolean isReadinfoflag() {
+		return readinfoflag;
+	}
+	public void setReadinfoflag(boolean readinfoflag) {
+		this.readinfoflag = readinfoflag;
+	}
+	public boolean isAddflag() {
+		return addflag;
+	}
+	public void setAddflag(boolean addflag) {
+		this.addflag = addflag;
+	}
+	public boolean isViewflag() {
+		return viewflag;
+	}
+	public void setViewflag(boolean viewflag) {
+		this.viewflag = viewflag;
+	}
+	public boolean isNumfloorandTen() {
+		return numfloorandTen;
+	}
+	public void setNumfloorandTen(boolean numfloorandTen) {
+		this.numfloorandTen = numfloorandTen;
+	}
+	public boolean isViewapartflag() {
+		return viewapartflag;
+	}
+	public void setViewapartflag(boolean viewapartflag) {
+		this.viewapartflag = viewapartflag;
+	}
+	public boolean isC() {
+		return c;
+	}
+	public void setC(boolean c) {
+		this.c = c;
+	}
+	private boolean viewapartflag=false;
+	private boolean c=false;
 
     public OwnerClass(Scanner scanner) {
         this.scanner = scanner;
     }
      public int choice;
+    
+
 public  void ownermenu() {
 
     do {
