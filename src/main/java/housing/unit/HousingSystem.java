@@ -10,8 +10,8 @@ public class HousingSystem {
     private static final Logger logger = Logger.getLogger(HousingSystem.class.getName());
 
     static Scanner scanner = new Scanner(System.in);
-    static ArrayList<HousingUnit> AdvertisementList = MyData.AdvertisementList();
-    static ArrayList<HousingUnit> HousingUnitList = MyData.getHousingUnitList();
+    static ArrayList<HousingUnit> advertisementlist = MyData.AdvertisementList();
+    static ArrayList<HousingUnit> housingunitlist = MyData.getHousingUnitList();
 
     public static void printData(List<HousingUnit> list) {
         for (HousingUnit house : list) {
@@ -59,10 +59,10 @@ public class HousingSystem {
         String availableServices = scanner.nextLine();
 
         logger.info("Is the residence for Students? (true/false):");
-        boolean Studentflag = scanner.nextBoolean();
+        boolean studentflag = scanner.nextBoolean();
         scanner.nextLine();
 
-        Apartments A = new Apartments();
+        Apartments a = new Apartments();
 
         HousingUnit house = new HousingUnit.Builder(location, iD)
                 .setPhoto(photo)
@@ -71,8 +71,8 @@ public class HousingSystem {
                 .setNumberOfFloors(numberOfFloors)
                 .setAvailableServices(availableServices)
                 .setReservedFlag(false)
-                .setApartments(A)
-                .setStudentHouse(Studentflag)
+                .setApartments(a)
+                .setStudentHouse(studentflag)
                 .build();
 
         MyData.addHousingUnitList(house);
@@ -81,8 +81,8 @@ public class HousingSystem {
     }
 
     public static void viewAdvertisementRequest() {
-        HousingSystem.printData(AdvertisementList);
-        if (AdvertisementList.isEmpty()) {
+        HousingSystem.printData(advertisementlist);
+        if (advertisementlist.isEmpty()) {
             logger.info("No new Advertisement requests");
             return;
         }
@@ -99,7 +99,7 @@ public class HousingSystem {
     }
 
     static HousingUnit FindHouse(List<HousingUnit> list) {
-        int id = Integer.parseInt(scanner.next()); // Consume the newline character
+        int id = Integer.parseInt(scanner.next()); 
         HousingUnit houseR = null;
         for (HousingUnit house : list) {
             if (house.getId() == id) {
@@ -110,17 +110,17 @@ public class HousingSystem {
     }
 
     public static HousingUnit acceptAdvertisementRequest() {
-        HousingUnit houseR = FindHouse(AdvertisementList);
-        AdvertisementList.remove(houseR);
-        HousingUnitList.add(houseR);
-        MyData.setHousingUnitList(HousingUnitList);
+        HousingUnit houseR = FindHouse(advertisementlist);
+        advertisementlist.remove(houseR);
+        housingunitlist.add(houseR);
+        MyData.setHousingUnitList(housingunitlist);
         logger.info("Advertisement Accepted");
         return houseR;
     }
 
     public static HousingUnit rejectAdvertisementRequest() {
-        HousingUnit houseR = FindHouse(AdvertisementList);
-        AdvertisementList.remove(houseR);
+        HousingUnit houseR = FindHouse(advertisementlist);
+        advertisementlist.remove(houseR);
         logger.info("Advertisement Rejected");
         return houseR;
     }
