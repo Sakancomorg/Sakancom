@@ -10,8 +10,8 @@ public class HousingSystem {
     private static final Logger logger = Logger.getLogger(HousingSystem.class.getName());
 
     static Scanner scanner = new Scanner(System.in);
-    static ArrayList<HousingUnit> advertisementlist = MyData.AdvertisementList();
-    static ArrayList<HousingUnit> housingunitlist = MyData.getHousingUnitList();
+    static List<HousingUnit> advertisementlist = MyData.advertisementlist();
+    static List<HousingUnit> housingunitlist = MyData.getHousingUnitList();
 
     public static void printData(List<HousingUnit> list) {
         for (HousingUnit house : list) {
@@ -20,8 +20,8 @@ public class HousingSystem {
     }
 
     public static void viewReservations() {
-        printData(MyData.ReservationsList());
-        if (MyData.ReservationsList().isEmpty()) {
+        printData(MyData.reservationslist());
+        if (MyData.reservationslist().isEmpty()) {
             logger.info("No Reservations");
             return;
         }
