@@ -40,7 +40,7 @@ public class OwnerTest {
 	@Then("the residence should be successfully added to the platform")
 	public void the_residence_should_be_successfully_added_to_the_platform() {
 			o.addresidence();
-			assertTrue(ownerislog&&o.addflag&&readinfoflag&&choiceadd);
+			assertTrue(ownerislog&&o.isAddflag()&&readinfoflag&&choiceadd);
 		
 	}
 
@@ -52,7 +52,7 @@ public class OwnerTest {
 	@Then("all their listed residences should be displayed")
 	public void all_their_listed_residences_should_be_displayed() {
 	   o.viewresidences();
-	   assertTrue(o.viewflag);
+	   assertTrue(o.isViewflag());
 	}
 
 	@When("they select a specific residence from the control panel")
@@ -64,14 +64,14 @@ public class OwnerTest {
 	public void the_number_of_tenants_in_that_residence_should_be_displayed() {
 		o.init();
 	   o.numoftenant();
-	   assertTrue(o.numfloorandTen);
+	   assertTrue(o.isNumfloorandTen());
 	}
 
 	@Then("the number of floors for that residence should be displayed")
 	public void the_number_of_floors_for_that_residence_should_be_displayed() {
 		o.init();
 		o.numoffloors();
-		   assertTrue(o.numfloorandTen);
+		   assertTrue(o.isNumfloorandTen());
 
 	}
 
@@ -83,7 +83,7 @@ public class OwnerTest {
 	@Then("the apartments on that floor should be displayed")
 	public void the_apartments_on_that_floor_should_be_displayed() {
 	    o.viewapatmen();
-	    assertTrue(o.viewapartflag);
+	    assertTrue(o.isViewapartflag());
 	}
 
 	@When("they choose a specific apartment")
@@ -95,14 +95,14 @@ public class OwnerTest {
 	public void the_names_of_the_tenants_and_their_contact_information_should_be_displayed() {
 		o.init();
 		o.viewapatmen();
-		assertTrue(o.viewapartflag);
+		assertTrue(o.isViewapartflag());
 	}
 
 	@Then("the number of bathrooms and bedrooms, and balcony availability should be shown")
 	public void the_number_of_bathrooms_and_bedrooms_and_balcony_availability_should_be_shown() {
 		o.init();
 		o.viewapatmen();
-		assertTrue(o.viewapartflag);
+		assertTrue(o.isViewapartflag());
 	}
 
 
