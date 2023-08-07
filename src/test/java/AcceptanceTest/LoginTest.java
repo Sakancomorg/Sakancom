@@ -10,16 +10,21 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginTest {
-	public MyData L=new MyData();	
+	public MyData L=new MyData();
+	boolean islog=false;
+	boolean passflag=false;
+	boolean eflag=false;
+
+	
 @Given("{string} status log is {int}")
 public void status_log_is(String string, Integer S) {
 	L.initarrayvalues();
 	    for (int i = 0; i < L.userinfo.size(); i++) {
 		if(S==0) {
-			L.islog=false;
+			islog=false;
 		}
 		else {
-			L.islog=true;
+			islog=true;
 		}
 		
 	}
@@ -31,13 +36,13 @@ public void the_password_is(String pass) {
 
     for (int i = 0; i < L.userinfo.size(); i++) {
 		if(L.userinfo.get(i).getPa().equals(pass)) {
-			   L.passflag=true;
+			   passflag=true;
 		}
 		else {
-			   L.passflag=false;
+			   passflag=false;
 
 		}
-		if(L.passflag==true) {
+		if(passflag==true) {
 			break;
 		}
 		}
@@ -49,13 +54,13 @@ public void the_email_is(String E) {
 
 	for (int i = 0; i < L.userinfo.size(); i++) {
 		if(L.userinfo.get(i).getEmaill().equals(E)) {
-			   L.eflag=true;
+			   eflag=true;
 		}
 		else {
-			   L.eflag=false;
+			   eflag=false;
 
 		}
-		if(L.eflag==true) {
+		if(eflag==true) {
 			break;
 		}
 		}
@@ -65,13 +70,13 @@ public void the_email_is(String E) {
 public void status_log_is_equal(Integer state) {
 	L.initarrayvalues();
 
-	 if(L.eflag==true && L.passflag==true) {
+	 if(eflag==true && passflag==true) {
 	    	state=1; 
-	    	L.islog=true;
+	    	islog=true;
 	    }
 	    else {
 	    	state=0;
-	    	L.islog=false;
+	    	islog=false;
 
 	    }
 }
@@ -80,11 +85,11 @@ public void status_log_is_equal(Integer state) {
 public void press_the_login_button() {
 	L.initarrayvalues();
 
-	 if(L.eflag==true && L.passflag==true) {
-	    	L.islog=true;
+	 if(eflag==true && passflag==true) {
+	    	islog=true;
 	    }
 	    else {
-	    	L.islog=false;
+	    	islog=false;
 
 	    }
 }
@@ -93,8 +98,8 @@ public void press_the_login_button() {
 public void login_success() {
 	L.initarrayvalues();
 
-	assertTrue(L.eflag==true && L.passflag==true);
-    if(!(L.eflag==true && L.passflag==true)) {
+	assertTrue(eflag==true && passflag==true);
+    if(!(eflag==true && passflag==true)) {
 	   fail("login failed");
 
     }
