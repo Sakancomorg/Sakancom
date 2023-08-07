@@ -146,11 +146,20 @@ public void addresidence() {
         meansOfCommunication.add(comm);
 
          a=new Apartments(floornum,ida ,tenantNames,meansOfCommunication,5,3,true);
-        HousingUnit unit = new HousingUnit(idd, location, photo, rent, 0, numberOfFloors,
-                                           availableServices, false, a, studentflag);
+       
+        HousingUnit house = new HousingUnit.Builder(location, idd)
+                .setPhoto(photo)
+                .setRent(rent)
+                .setNumberOfTenants(0)
+                .setNumberOfFloors(numberOfFloors)
+                .setAvailableServices(availableServices)
+                .setReservedFlag(false)
+                .setApartments(a)
+                .setStudentHouse(studentflag)
+                .build();
         
-        houseinfo.add(unit);
-	    MyData.addAdvertisementList(unit);
+        houseinfo.add(house);
+	    MyData.addAdvertisementList(house);
 	    addflag = true;
 	}
 
@@ -173,11 +182,18 @@ public void init() {
 
     Apartments A1 = new Apartments(floornum1, ida1, tenantNames1, meansOfCommunication1, 5, 3, true);
 
-    HousingUnit unit1 = new HousingUnit(iD1, location1, photo1, rent1, numberOfTenants1, numberOfFloors1,
-            availableServices1, acceptflag1, A1,true);
-
-    houseinfo.add(unit1);
-
+    HousingUnit house = new HousingUnit.Builder(location1, iD1)
+            .setPhoto(photo1)
+            .setRent(rent1)
+            .setNumberOfTenants(0)
+            .setNumberOfFloors(numberOfFloors1)
+            .setAvailableServices(availableServices1)
+            .setReservedFlag(acceptflag1)
+            .setApartments(A1)
+            .setStudentHouse(true)
+            .build();
+    
+    houseinfo.add(house);
     int iD2 = 2;
     String location2 = "123 Main Street";
     String photo2 = "house.jpg";
@@ -196,10 +212,17 @@ public void init() {
 
     Apartments A2 = new Apartments(floornum2, ida2, tenantNames2, meansOfCommunication2, 4, 2, false);
 
-    HousingUnit unit2 = new HousingUnit(iD2, location2, photo2, rent2, numberOfTenants2, numberOfFloors2,
-            availableServices2, acceptflag2, A2,true);
+    HousingUnit house2 = new HousingUnit.Builder(location2, iD2)
+            .setPhoto(photo2)
+            .setRent(rent2)
+            .setNumberOfTenants(numberOfTenants2)
+            .setNumberOfFloors(numberOfFloors2)
+            .setAvailableServices(availableServices2)
+            .setReservedFlag(acceptflag2)
+            .setApartments(A2)
+            .setStudentHouse(true)
+            .build();
 
-    houseinfo.add(unit2);
 }
 public void viewresidences() {
 	init();
