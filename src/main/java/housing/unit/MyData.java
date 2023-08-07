@@ -8,12 +8,30 @@ public class MyData {
 	
 
 
-	public boolean islog;
-	public boolean passflag;
-	public boolean eflag;
+	private boolean islog;
+	private boolean passflag;
+	private boolean eflag;
 	
 
 	
+	public boolean isIslog() {
+		return islog;
+	}
+	public void setIslog(boolean islog) {
+		this.islog = islog;
+	}
+	public boolean isPassflag() {
+		return passflag;
+	}
+	public void setPassflag(boolean passflag) {
+		this.passflag = passflag;
+	}
+	public boolean isEflag() {
+		return eflag;
+	}
+	public void setEflag(boolean eflag) {
+		this.eflag = eflag;
+	}
 	public ArrayList<User> userinfo = new ArrayList<User>();
   static ArrayList <HousingUnit> HousingUnitList=new ArrayList<HousingUnit>() ;
    static ArrayList <HousingUnit> AdvertisementList=new ArrayList<HousingUnit>() ;
@@ -56,10 +74,10 @@ public static void addAdvertisementList(HousingUnit unit) {
 	
    }
 	public void initarrayvalues() {
-        userinfo.add(new User("admin","samaa","samaa@gmail.com","4545",1));
-        userinfo.add(new User("tenant","malak","m@gmail.com","1234",1));
-        userinfo.add(new User("owner","nancy","N@gmail.com","4444",1));
-        userinfo.add(new User("admin","tala","tala@gmail.com","7676",1));
+		 userinfo.add(new User("admin","samaa","samaa@gmail.com","4545",1));
+	        userinfo.add(new User("tenant","malak","m@gmail.com","1234",1));
+	        userinfo.add(new User("owner","nancy","N@gmail.com","4444",1));
+	        userinfo.add(new User("admin","tala","tala@gmail.com","7676",1));
 	} 
    
    public static ArrayList<HousingUnit> ReservationsList() {
