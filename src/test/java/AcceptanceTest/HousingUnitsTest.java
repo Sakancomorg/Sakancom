@@ -4,6 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import housing.unit.AdminClass;
 import housing.unit.HouseExist;
@@ -24,7 +25,7 @@ MyData obj=null ;
 HousingUnit EnteredHouse;
 HousingUnit ModifiesHouseBefore;
 HousingUnit ModifiesHouseAfter;
-ArrayList <HousingUnit> HousingUnitList;
+List <HousingUnit> HousingUnitList;
 ModifyHouseUnit MH ;
 public HousingUnitsTest(MyData obj,ModifyHouseUnit MH) {
 		super();
