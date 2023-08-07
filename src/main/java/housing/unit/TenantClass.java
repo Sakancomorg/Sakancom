@@ -1,10 +1,8 @@
 package housing.unit;
-
-import java.awt.print.Book;
+import housing.unit.Book;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 
 import housing.unit.TenantSystem;
 
@@ -18,9 +16,8 @@ public class TenantClass {
 	private boolean viewtimetopayf=false;
 	String username;
 	String e;
-
 	 private boolean advflag =false;
-	 book bookInstance;
+	 Book bookInstance;
 	 LoginSteps L=new LoginSteps(scanner);
     public int choice;
     int ch;
@@ -32,10 +29,6 @@ public class TenantClass {
         this.scanner = scanner;
     }
 	
-
-
-	
-
 	public boolean isSeladv() {
 		return seladv;
 	}
@@ -60,8 +53,7 @@ public class TenantClass {
         switch (choice) {
             case 1:
 
-            	 TenantSystem.viewAvailableHousing();
-                 
+            	 TenantSystem.viewAvailableHousing();       
                  System.out.println("Do you want to book a house unit");
                  String s=scanner.nextLine();
                  if(s.equalsIgnoreCase("yes"))
@@ -150,7 +142,7 @@ public void init() {
     String ownername = "John Smith";
     int number = 1234567890;
     String email = "john@example.com";
-     bookInstance = new book(rent, time, ownername, number, email);
+     bookInstance =new Book(rent, time, ownername, number, email);
 		
 	}
 
@@ -194,17 +186,9 @@ public void init() {
 		this.viewtimetopayf = viewtimetopayf;
 	}
 
-
-
-
-
 	public boolean isAdvflag() {
 		return advflag;
 	}
-
-
-
-
 
 	public void setAdvflag(boolean advflag) {
 		this.advflag = advflag;
