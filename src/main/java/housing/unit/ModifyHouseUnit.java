@@ -15,13 +15,14 @@ public class ModifyHouseUnit {
     public static void modify() {
         logger.info("Enter the ID of the housing unit to modify: ");
         housingUnitToModify = HousingUnit.FindHouse(MyData.getHousingUnitList());
-        if (housingUnitToModify == null) return;
+        if (housingUnitToModify == null) {
+		 logger.info("No housing unit found with the given ID.");
+		return;
+	}
+	    
         index = MyData.housingunitlist.indexOf(housingUnitToModify);
         Scanner scanner = new Scanner(System.in);
-        if (housingUnitToModify == null) {
-            logger.info("No housing unit found with the given ID.");
-            return;
-        }
+       
         logger.info("Enter the new location: ");
         String newLocation = scanner.next();
         housingUnitToModify.setLocation(newLocation);
