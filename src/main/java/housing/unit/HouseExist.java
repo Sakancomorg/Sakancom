@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 public class HouseExist {
 
-	public static boolean cheack(HousingUnit enteredhouse, ArrayList<HousingUnit> HousingUnitList) {
-		// TODO Auto-generated method stub
-		for (HousingUnit house : HousingUnitList) {
-		     if(house.equals(enteredhouse))
-		    	return true;
-     }
-		
-		return false;
-	}
+    private HouseExist() {
+    }
 
+    public static boolean check(HousingUnit enteredHouse, ArrayList<HousingUnit> housingUnitList) {
+        for (HousingUnit house : housingUnitList) {
+            if (house.equals(enteredHouse)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
