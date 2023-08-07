@@ -11,25 +11,15 @@ public class Furniture {
 		return furniturename;
 	}
 
-	public void setFurnitureName(String furnitureName) {
-		furnitureName = furnitureName;
-	}
-
 	public String getFurnitureCategory() {
 		return furniturecategory;
 	}
 
-	public void setFurnitureCategory(String furnitureCategory) {
-		furnitureCategory = furnitureCategory;
-	}
-
+	
 	public String getDescription() {
 		return description;
 	}
 
-	public void setDescription(String description) {
-		description = description;
-	}
 
 	public double getPrice() {
 		return price;
@@ -43,9 +33,6 @@ public class Furniture {
 		return contactInfo;
 	}
 
-	public void setContactInfo(String contactInfo) {
-		contactInfo = contactInfo;
-	}
 
 	public Furniture (String furniturename ,String furniturecategory ,String description ,double price ,String contactInfo){
 		this.furniturecategory=furniturecategory;
