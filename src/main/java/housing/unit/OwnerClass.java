@@ -236,7 +236,7 @@ public void viewapatmen() {
 	ArrayList<Apartments> apartmentsList = new ArrayList<Apartments>();
     viewapartflag = true;
 
-	System.out.println("Enter the number of floor:");
+    logger.info("Enter the number of floor:");
 	int idf = scanner.nextInt();
     for (HousingUnit unit : houseinfo) {
         if (unit.getA().getFloor() == idf) {
@@ -269,7 +269,6 @@ public void viewapatmen() {
     	logger.info("No apartments found on floor number " + idf);
     }
 
-	viewapartflag=true;
 	}   
 
     
