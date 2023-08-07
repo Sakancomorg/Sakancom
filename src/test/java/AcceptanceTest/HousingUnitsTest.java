@@ -34,8 +34,8 @@ public HousingUnitsTest(MyData obj,ModifyHouseUnit MH) {
 	    this.HousingUnitList=MyData.getHousingUnitList();
 	    this.MH=MH;
 	    ModifyHouseUnit.modifyAdmin();
-	    this.ModifiesHouseBefore= ModifyHouseUnit.housingUnitToModify;
-	    this.ModifiesHouseAfter= ModifyHouseUnit.housingUnitToModifyAfter;
+	    this.ModifiesHouseBefore= ModifyHouseUnit.getHousingUnitToModify();
+	    this.ModifiesHouseAfter= ModifyHouseUnit.getHousingUnitToModifyAfter();
 	    
 	}
 
