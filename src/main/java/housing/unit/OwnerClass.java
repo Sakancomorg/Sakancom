@@ -258,7 +258,7 @@ public void numoftenant() {
     	}
     }
     numfloorandTen =true;
-    logger.info("The number of tenant is : "+num);	
+    logger.info(String.format("The number of tenant is: %d", num));
 }
 public void numoffloors() {
 	int n=0;
@@ -267,7 +267,7 @@ public void numoffloors() {
             n=houseinfo.get(i).getNumberOfFloors();
     	}
     numfloorandTen =true;
-    logger.info(" and the number of floors is : "+n);	
+    logger.info(String.format("And the number of floors is: %d", n));
     
 }
 }
