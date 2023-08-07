@@ -259,7 +259,8 @@ public void numoftenant() {
     	}
     }
     numfloorandTen =true;
-    logger.info(String.format("The number of tenant is: %d", num));
+    String tenantCountInfo = String.format("The number of tenant is: %d", num);
+    logger.info(tenantCountInfo);
 }
 public void numoffloors() {
 	int n=0;
@@ -268,7 +269,8 @@ public void numoffloors() {
             n=houseinfo.get(i).getNumberOfFloors();
     	}
     numfloorandTen =true;
-    logger.info(String.format("And the number of floors is: %d", n));
+    String floorsInfo = String.format("And the number of floors is: %d", n);
+    logger.info(floorsInfo);
     
 }
 }
@@ -307,7 +309,9 @@ public void viewapatmen() {
 
             logger.info("") ;       }
     } else {
-    	logger.info(String.format("No apartments found on floor number %d", idf));
+    	
+    	String noApartmentsInfo = String.format("No apartments found on floor number %d", idf);
+    	logger.info(noApartmentsInfo);
     }
 
 	}   
