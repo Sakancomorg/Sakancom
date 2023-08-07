@@ -32,17 +32,17 @@ public class MyData {
 		this.eflag = eflag;
 	}
 	public List<User> userinfo = new ArrayList<User>();
-  static ArrayList <HousingUnit> housingunitlist=new ArrayList<HousingUnit>() ;
-   static ArrayList <HousingUnit> advertisementlist=new ArrayList<HousingUnit>() ;
-   static ArrayList <HousingUnit> reservationslist=new ArrayList<HousingUnit>() ;
+  static List <HousingUnit> housingunitlist=new ArrayList<HousingUnit>() ;
+   static List <HousingUnit> advertisementlist=new ArrayList<HousingUnit>() ;
+   static List <HousingUnit> reservationslist=new ArrayList<HousingUnit>() ;
   
-   public static void setHousingUnitList(ArrayList<HousingUnit> housingUnitList) {
+   public static void setHousingUnitList(List<HousingUnit> housingUnitList) {
 	   housingunitlist = housingUnitList;
 }
-public static void setAdvertisementList(ArrayList<HousingUnit> advertisementList) {
+public static void setAdvertisementList(List<HousingUnit> advertisementList) {
 	advertisementlist = advertisementList;
 }
-public static void setReservationsList(ArrayList<HousingUnit> reservationsList) {
+public static void setReservationsList(List<HousingUnit> reservationsList) {
 	reservationslist = reservationsList;
 }
 
@@ -61,12 +61,12 @@ public static void addAdvertisementList(HousingUnit unit) {
 }
 
 
-   public static ArrayList<HousingUnit> getHousingUnitList() {
+   public static List<HousingUnit> getHousingUnitList() {
 	return housingunitlist;
 	    
 	
    }
-   public static ArrayList<HousingUnit> AdvertisementList() {
+   public static List<HousingUnit> AdvertisementList() {
 	 
 	   return advertisementlist;
 	    
@@ -79,7 +79,7 @@ public static void addAdvertisementList(HousingUnit unit) {
 	        userinfo.add(new User("admin","tala","tala@gmail.com","7676",1));
 	} 
    
-   public static ArrayList<HousingUnit> ReservationsList() {
+   public static List<HousingUnit> ReservationsList() {
 	return reservationslist;
 	    
 	
