@@ -27,7 +27,7 @@ public class OwnerTest {
 	@When("they choose to add a new private residence")
 	public void they_choose_to_add_a_new_private_residence() {
 		o.ownermenu();
-		if(o.choice==1||o.choice==6) {
+		if(o.getChoice()==1||o.getChoice()==6) {
 			choiceadd=true;
 		}
 	}
