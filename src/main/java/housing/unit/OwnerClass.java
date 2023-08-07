@@ -11,7 +11,7 @@ public class OwnerClass {
 	List<HousingUnit> houseinfo = new ArrayList<HousingUnit>();
 	List<String> tenantNames = new ArrayList<String>();
 	List<String> meansOfCommunication = new ArrayList<String>();
-	Apartments A;
+	Apartments a;
 	private Scanner scanner;
 	private boolean readinfoflag=false;
 	private boolean addflag=false;
@@ -109,7 +109,7 @@ public  void ownermenu() {
 public void addresidence() {
 	    readinfoflag = true;
         logger.info("Enter the id:");
-        int iD = scanner.nextInt();
+        int idd = scanner.nextInt();
         scanner.nextLine();
 
         logger.info("Enter the location:");
@@ -131,7 +131,7 @@ public void addresidence() {
         String availableServices = scanner.nextLine();
 
         logger.info("Is the residence for Students? (true/false):");
-        boolean Studentflag = scanner.nextBoolean();
+        boolean studentflag = scanner.nextBoolean();
         scanner.nextLine();
         logger.info("Enter the number of floor:");
         floornum = scanner.nextInt();
@@ -145,9 +145,9 @@ public void addresidence() {
         String comm=  scanner.nextLine();
         meansOfCommunication.add(comm);
 
-        Apartments A=new Apartments(floornum,ida ,tenantNames,meansOfCommunication,5,3,true);
-        HousingUnit unit = new HousingUnit(iD, location, photo, rent, 0, numberOfFloors,
-                                           availableServices, false, A, Studentflag);
+         a=new Apartments(floornum,ida ,tenantNames,meansOfCommunication,5,3,true);
+        HousingUnit unit = new HousingUnit(idd, location, photo, rent, 0, numberOfFloors,
+                                           availableServices, false, a, studentflag);
         
         houseinfo.add(unit);
 	    MyData.addAdvertisementList(unit);
