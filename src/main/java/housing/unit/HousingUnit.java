@@ -224,19 +224,7 @@ public class HousingUnit {
     }
   
     
-    static HousingUnit FindHouse(List <HousingUnit> list) {
-    	 Scanner scanner = new Scanner(System.in);
-		  int  id=Integer.parseInt(scanner.next()); 
-		  HousingUnit houseR = null;
-		  for(HousingUnit house:list) {
-				if(house.getId()==id) {
-					
-					houseR=house;
-				}
-			}
-			return houseR;
-			
-	}
+
 
 
 	
