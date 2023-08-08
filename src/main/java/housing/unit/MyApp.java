@@ -7,19 +7,19 @@ public class MyApp {
 	public static void main(String[] args) { 
 		 String s;
         Scanner scanner = new Scanner(System.in);
-		LoginSteps LS;
+		LoginSteps ls;
 		TenantClass t=new TenantClass(scanner);
 		OwnerClass o=new OwnerClass(scanner);
 		AdminClass a=new AdminClass();
 		
 		do {
-		LS= new LoginSteps(scanner);
-		LS.init();
-		if(LS.isAdminflag())
+		ls= new LoginSteps(scanner);
+		ls.init();
+		if(ls.isAdminflag())
 			a.adminmenu();
-		else if(LS.isOwnerflag())
+		else if(ls.isOwnerflag())
 			o.ownermenu();
-		else if(LS.isTenantflag()) 
+		else if(ls.isTenantflag()) 
 			t.tenantmenu();
 		
 		System.out.println("Close the App?");
