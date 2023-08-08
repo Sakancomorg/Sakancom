@@ -13,12 +13,12 @@ public class HousingUnit {
     private int id;
     private String availableServices;
     private boolean reservedFlag;
-    private Apartments a;
+    private Apartments apar;
     private TenantClass t;
     private boolean studentHouse;
 
     private HousingUnit(String location, String photo, double rent, int numberOfTenants, int numberOfFloors,
-                        String availableServices, boolean reservedFlag, Apartments a, boolean studentHouse, int id) {
+                        String availableServices, boolean reservedFlag, Apartments apar, boolean studentHouse, int id) {
         this.location = location;
         this.photo = photo;
         this.rent = rent;
@@ -26,7 +26,7 @@ public class HousingUnit {
         this.numberOfFloors = numberOfFloors;
         this.availableServices = availableServices;
         this.reservedFlag = reservedFlag;
-        this.a = a;
+        this.apar = apar;
         this.studentHouse = studentHouse;
         this.id = id;
     }
@@ -40,8 +40,7 @@ public class HousingUnit {
         private int id;
         private String availableServices;
         private boolean reservedFlag;
-        private Apartments a;
-        private TenantClass t;
+        private Apartments apar;
         private boolean studentHouse;
 
         public Builder(String location, int id) {
@@ -80,7 +79,7 @@ public class HousingUnit {
         }
 
         public Builder setApartments(Apartments a) {
-            this.a = a;
+            this.apar = a;
             return this;
         }
 
@@ -91,7 +90,7 @@ public class HousingUnit {
 
         public HousingUnit build() {
             return new HousingUnit(location, photo, rent, numberOfTenants, numberOfFloors,
-                    availableServices, reservedFlag, a, studentHouse, id);
+                    availableServices, reservedFlag, apar, studentHouse, id);
         }
     }
 
@@ -180,11 +179,11 @@ public class HousingUnit {
 
 
 	public Apartments getA() {
-		return a;
+		return apar;
 	}
 
 	public void setA(Apartments a) {
-		this.a = a;
+		this.apar = a;
 	}
 
 
@@ -211,28 +210,9 @@ public class HousingUnit {
                 ", Floors: " + numberOfFloors +
                 ", Services: " + availableServices +
                 ", Accept: " + reservedFlag +
-                ", \nApartments: " + a.toString();
+                ", \nApartments: " + apar.toString();
       
-        	
-
     }
   
-    
-
-
-
-	
-	
-
 }
     
-    
-    
-    
-    
-    
-    
-    
-    
-
-
