@@ -26,10 +26,6 @@ public class HousingUnit {
 		return numoftenants;
 	}
 
-	public void setNumoftenants(int numoftenants) {
-		this.numoftenants = numoftenants;
-	}
-
 	public HousingUnit(LocationInfo locationInfo, Apartments apartmentInfo,
                        boolean reservedFlag, boolean studentHouse,int numoffloors,String availableServices) {
         this.locationInfo = locationInfo;
@@ -60,10 +56,6 @@ public class HousingUnit {
 		return apartmentInfo;
 	}
 
-	public void setApartmentInfo(Apartments apartmentInfo) {
-		this.apartmentInfo = apartmentInfo;
-	}
-
 	public boolean isReservedFlag() {
 		return reservedFlag;
 	}
@@ -71,7 +63,6 @@ public class HousingUnit {
 	public void setReservedFlag(boolean reservedFlag) {
 		this.reservedFlag = reservedFlag;
 	}
-
 
 	public boolean isStudentHouse() {
 		return studentHouse;
@@ -108,4 +99,3 @@ public class HousingUnit {
 	    }
   
 }
-    
