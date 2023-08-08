@@ -19,42 +19,27 @@ public class OwnerClass {
 	int idresidence=0;
 	int idapart=0;
 	int floornum=0;
-	public boolean isReadinfoflag() {
-		return readinfoflag;
-	}
-	public void setReadinfoflag(boolean readinfoflag) {
-		this.readinfoflag = readinfoflag;
-	}
+	
 	public boolean isAddflag() {
 		return addflag;
 	}
-	public void setAddflag(boolean addflag) {
-		this.addflag = addflag;
-	}
+	
 	public boolean isViewflag() {
 		return viewflag;
 	}
-	public void setViewflag(boolean viewflag) {
-		this.viewflag = viewflag;
-	}
+	
 	public boolean isNumfloorandTen() {
 		return numfloorandTen;
 	}
-	public void setNumfloorandTen(boolean numfloorandTen) {
-		this.numfloorandTen = numfloorandTen;
-	}
+	
 	public boolean isViewapartflag() {
 		return viewapartflag;
 	}
-	public void setViewapartflag(boolean viewapartflag) {
-		this.viewapartflag = viewapartflag;
-	}
+	
 	public boolean isC() {
 		return c;
 	}
-	public void setC(boolean c) {
-		this.c = c;
-	}
+	
 	private boolean viewapartflag=false;
 	private boolean c=false;
 
@@ -87,16 +72,17 @@ public  void ownermenu() {
             case 2:
             	viewresidences();
                 break;
-            case 3:  numoftenant() ;
+            case 3:
+            	numoftenant() ;
                      numoffloors() ;            
                        break;
 
-            case 4: viewapatmen() ;
+            case 4:  	
+            	viewapatmen() ;
                       break;
 
-       
-
             case 5:
+
                 logger.info("Exiting the Housing Owner App. Goodbye!");
                 break;
             default:
@@ -107,9 +93,6 @@ public  void ownermenu() {
 }
 public int getChoice() {
 	return choice;
-}
-public void setChoice(int choice) {
-	this.choice = choice;
 }
 public void addresidence() {
 	    readinfoflag = true;
