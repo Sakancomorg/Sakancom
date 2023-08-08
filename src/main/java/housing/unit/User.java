@@ -19,40 +19,21 @@ public class User {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getEmaill() {
 		return emaill;
-	}
-
-	public void setEmaill(String emaill) {
-		this.emaill = emaill;
 	}
 
 	public String getPa() {
 		return pa;
 	}
 
-	public void setPa(String pa) {
-		this.pa = pa;
-	}
-
+	
 	public String getRole() {
 		return role;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
-	}
-
 	public int getS() {
 		return s;
-	}
-
-	public void setS(int s) {
-		this.s = s;
 	}
 
 }
