@@ -24,20 +24,12 @@ public class TenantClass {
 		return choice;
 	}
 
-	public void setChoice(int choice) {
-		this.choice = choice;
-	}
-
 	public TenantClass(Scanner scanner) {
         this.scanner = scanner;
     }
 
     public boolean isSeladv() {
         return seladv;
-    }
-
-    public void setSeladv(boolean seladv) {
-        this.seladv = seladv;
     }
 
     public void tenantmenu() {
