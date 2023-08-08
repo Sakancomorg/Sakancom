@@ -92,7 +92,7 @@ public class HousingSystem {
         if (decision == 1)
             acceptAdvertisementRequest();
         else if (decision == 2)
-           rejectAdvertisementRequest()
+           rejectAdvertisementRequest();
        
     }
 
