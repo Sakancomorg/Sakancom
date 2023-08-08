@@ -3,7 +3,7 @@ package housing.unit;
 import java.util.logging.Logger;
 
 public class TenantSystem {
-    private static final Logger logger = Logger.getLogger(TenantClass.class.getName());
+    private static final Logger logger = Logger.getLogger(TenantSystem.class.getName());
 
 	public static void viewAvailableHousing() {
 	HousingSystem.printData(MyData.getAvilableHousing());
