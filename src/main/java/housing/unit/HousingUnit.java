@@ -2,100 +2,69 @@ package housing.unit;
 
 import java.util.Objects;
 
-
 public class HousingUnit {
 	
-	private String location;
-    private String photo;
-    private double rent;
-    private int numberOfTenants;
-    private int numberOfFloors;
-    private int id;
-    private String availableServices;
+	private LocationInfo locationInfo;
+    private Apartments apartmentInfo;
     private boolean reservedFlag;
-    private Apartments apar;
-    private TenantClass t;
     private boolean studentHouse;
+    private int numoffloors;
+    private String availableServices;
+    private int numoftenants;
 
-    private HousingUnit(String location, String photo, double rent, int numberOfTenants, int numberOfFloors,
-                        String availableServices, boolean reservedFlag, Apartments apar, boolean studentHouse, int id) {
-        this.location = location;
-        this.photo = photo;
-        this.rent = rent;
-        this.numberOfTenants = numberOfTenants;
-        this.numberOfFloors = numberOfFloors;
-        this.availableServices = availableServices;
+
+
+    public String getAvailableServices() {
+		return availableServices;
+	}
+
+	public void setAvailableServices(String availableServices) {
+		this.availableServices = availableServices;
+	}
+
+	public int getNumoftenants() {
+		return numoftenants;
+	}
+
+	public void setNumoftenants(int numoftenants) {
+		this.numoftenants = numoftenants;
+	}
+
+	public HousingUnit(LocationInfo locationInfo, Apartments apartmentInfo,
+                       boolean reservedFlag, boolean studentHouse,int numoffloors,String availableServices) {
+        this.locationInfo = locationInfo;
+        this.apartmentInfo = apartmentInfo;
         this.reservedFlag = reservedFlag;
-        this.apar = apar;
         this.studentHouse = studentHouse;
-        this.id = id;
+        this.numoffloors=numoffloors;
+        this.availableServices=availableServices;
     }
 
-    public static class Builder {
-        private String location;
-        private String photo;
-        private double rent;
-        private int numberOfTenants;
-        private int numberOfFloors;
-        private int id;
-        private String availableServices;
-        private boolean reservedFlag;
-        private Apartments apar;
-        private boolean studentHouse;
+    public int getNumoffloors() {
+		return numoffloors;
+	}
 
-        public Builder(String location, int id) {
-            this.location = location;
-            this.id = id;
-        }
+	public void setNumoffloors(int numoffloors) {
+		this.numoffloors = numoffloors;
+	}
 
-        public Builder setPhoto(String photo) {
-            this.photo = photo;
-            return this;
-        }
+	public LocationInfo getLocationInfo() {
+		return locationInfo;
+	}
 
-        public Builder setRent(double rent) {
-            this.rent = rent;
-            return this;
-        }
+	public void setLocationInfo(LocationInfo locationInfo) {
+		this.locationInfo = locationInfo;
+	}
 
-        public Builder setNumberOfTenants(int numberOfTenants) {
-            this.numberOfTenants = numberOfTenants;
-            return this;
-        }
+	public Apartments getApartmentInfo() {
+		return apartmentInfo;
+	}
 
-        public Builder setNumberOfFloors(int numberOfFloors) {
-            this.numberOfFloors = numberOfFloors;
-            return this;
-        }
+	public void setApartmentInfo(Apartments apartmentInfo) {
+		this.apartmentInfo = apartmentInfo;
+	}
 
-        public Builder setAvailableServices(String availableServices) {
-            this.availableServices = availableServices;
-            return this;
-        }
-
-        public Builder setReservedFlag(boolean reservedFlag) {
-            this.reservedFlag = reservedFlag;
-            return this;
-        }
-
-        public Builder setApartments(Apartments a) {
-            this.apar = a;
-            return this;
-        }
-
-        public Builder setStudentHouse(boolean studentHouse) {
-            this.studentHouse = studentHouse;
-            return this;
-        }
-
-        public HousingUnit build() {
-            return new HousingUnit(location, photo, rent, numberOfTenants, numberOfFloors,
-                    availableServices, reservedFlag, apar, studentHouse, id);
-        }
-    }
-
-    
-    public boolean isReservedFlag() {
+	public boolean isReservedFlag() {
 		return reservedFlag;
 	}
 
@@ -103,13 +72,6 @@ public class HousingUnit {
 		this.reservedFlag = reservedFlag;
 	}
 
-	public TenantClass getT() {
-		return t;
-	}
-
-	public void setT(TenantClass t) {
-		this.t = t;
-	}
 
 	public boolean isStudentHouse() {
 		return studentHouse;
@@ -119,100 +81,31 @@ public class HousingUnit {
 		this.studentHouse = studentHouse;
 	}
 
-	public String getLocation() {
-		return location;
-	}
-
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-	public String getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-
-	public double getRent() {
-		return rent;
-	}
-
-	public void setRent(double rent) {
-		this.rent = rent;
-	}
-
-	public int getNumberOfTenants() {
-		return numberOfTenants;
-	}
-
-	public void setNumberOfTenants(int numberOfTenants) {
-		this.numberOfTenants = numberOfTenants;
-	}
-
-	public int getNumberOfFloors() {
-		return numberOfFloors;
-	}
-
-	public void setNumberOfFloors(int numberOfFloors) {
-		this.numberOfFloors = numberOfFloors;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getAvailableServices() {
-		return availableServices;
-	}
-
-
-	public void setAvailableServices(String availableServices) {
-		this.availableServices = availableServices;
-	}
-
-
-	public Apartments getA() {
-		return apar;
-	}
-
-	public void setA(Apartments a) {
-		this.apar = a;
-	}
-
-
-	   @Override
+	
+	 @Override
 	    public boolean equals(Object o) {
 	        if (this == o) return true;
 	        if (o == null || getClass() != o.getClass()) return false;
 	        HousingUnit that = (HousingUnit) o;
-	        return id == that.id;
+	        return locationInfo.getId() == that.locationInfo.getId();
 	    }
 
 	    @Override
 	    public int hashCode() {
-	        return Objects.hash(id);
+	        return Objects.hash(locationInfo.getId());
 	    }
 
-    @Override
-    public String toString() {
-        return "ID: " + id +
-
-                ", Location: " + location +
-                ", Rent: $" + rent +
-                ", Tenants: " + numberOfTenants +
-                ", Floors: " + numberOfFloors +
-                ", Services: " + availableServices +
-                ", Accept: " + reservedFlag +
-                ", \nApartments: " + apar.toString();
-      
-    }
+	    @Override
+	    public String toString() {
+	        return "ID: " + locationInfo.getId() +
+	                ", Location: " + locationInfo.getLocation() +
+	                ", Rent: $" + locationInfo.getRent() +
+	                ", Tenants: " +getNumoftenants()  +
+	                ", Floors: " + getNumoffloors() +
+	                ", Services: " + getAvailableServices() +
+	                ", Accept: " + reservedFlag +
+	                ", \nApartments: " + apartmentInfo.toString();
+	    }
   
 }
     
