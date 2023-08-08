@@ -30,7 +30,7 @@ public void there_is_a_housing_advertisement_request() {
 
 @When("the Admin views the housing advertisement request details")
 public void the_admin_views_the_housing_advertisement_request_details() {
-	if (hasAdvertisementRequest) {
+	if (!hasAdvertisementRequest) {
 		HousingSystem.viewAdvertisementRequest();
     }
 }
