@@ -27,7 +27,7 @@ HousingUnit ModifiesHouseBefore;
 HousingUnit ModifiesHouseAfter;
 List <HousingUnit> HousingUnitList;
 ModifyHouseUnit MH ;
-public HousingUnitsTest(MyData obj,ModifyHouseUnit MH) {
+public HousingUnitsTesting(MyData obj,ModifyHouseUnit MH) {
 		super();
 		this.obj= obj;
 	    this.EnteredHouse=HousingSystem.addUnit();
