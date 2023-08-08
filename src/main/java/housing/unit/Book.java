@@ -19,32 +19,22 @@ public class Book {
 	public double getRent() {
 		return rent;
 	}
-	public void setRent(double rent) {
-		this.rent = rent;
-	}
+	
 	public Time getTime() {
 		return time;
 	}
-	public void setTime(Time time) {
-		this.time = time;
-	}
+	
 	public String getOwnername() {
 		return ownername;
 	}
-	public void setOwnername(String ownername) {
-		this.ownername = ownername;
-	}
+	
 	public int getNumber() {
 		return number;
 	}
-	public void setNumber(int number) {
-		this.number = number;
-	}
+	
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 
 }
