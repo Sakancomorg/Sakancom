@@ -30,32 +30,16 @@ public class Apartments {
         return numberOfBathrooms;
     }
 
-    public void setNumberOfBathrooms(int numberOfBathrooms) {
-        this.numberOfBathrooms = numberOfBathrooms;
-    }
-
     public int getNumberOfBedrooms() {
         return numberOfBedrooms;
-    }
-
-    public void setNumberOfBedrooms(int numberOfBedrooms) {
-        this.numberOfBedrooms = numberOfBedrooms;
     }
 
     public boolean isHasBalcony() {
         return hasBalcony;
     }
 
-    public void setHasBalcony(boolean hasBalcony) {
-        this.hasBalcony = hasBalcony;
-    }
-
     public int getFloor() {
         return floor;
-    }
-
-    public void setFloor(int floor) {
-        this.floor = floor;
     }
 
     public int getId() {
@@ -69,18 +53,13 @@ public class Apartments {
     public List<String> getTenantNames() {
         return tenantNames;
     }
-
-    public void setTenantNames(List<String> tenantNames) {
-        this.tenantNames = tenantNames;
-    }
+   
 
     public List<String> getMeansOfCommunication() {
         return meansOfCommunication;
     }
 
-    public void setMeansOfCommunication(List<String> meansOfCommunication) {
-        this.meansOfCommunication = meansOfCommunication;
-    }
+   
 
     @Override
     public String toString() {
