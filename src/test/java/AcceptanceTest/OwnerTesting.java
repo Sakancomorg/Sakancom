@@ -9,16 +9,17 @@ import io.cucumber.java.en.When;
 
 public class OwnerTesting {
     Scanner scanner = new Scanner(System.in);
+	OwnerClass o=new OwnerClass(scanner);
+
 	private boolean ownerislog=false;
 	private boolean readinfoflag=false;
-	private boolean choiceadd=false;
+	private boolean choiceadd=o.isC();
 	private boolean canaccess=false;
 	private boolean selflagr=false;
 	private boolean selflagf=false;
 	private boolean selflaga=false;
 
 
-	OwnerClass o=new OwnerClass(scanner);
 	@Given("the housing owner is logged in")
 	public void the_housing_owner_is_logged_in() {
 		ownerislog=true; 
@@ -27,7 +28,7 @@ public class OwnerTesting {
 	@When("they choose to add a new private residence")
 	public void they_choose_to_add_a_new_private_residence() {
 		o.ownermenu();
-		if(o.getChoice()==1||o.getChoice()==6) {
+		if(o.getChoice()==1||o.getChoice()==5) {
 			choiceadd=true;
 		}
 	}
