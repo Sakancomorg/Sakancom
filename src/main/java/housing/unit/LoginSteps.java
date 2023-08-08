@@ -61,16 +61,16 @@ public class LoginSteps {
     public boolean checkCredentials(String username, String password) {
         boolean nameflag = false;
         boolean pasflag = false;
-        for (int i = 0; i < mydata.userinfo.size(); i++) {
-            if (mydata.userinfo.get(i).getName().equals(username)) {
+        for (int i = 0; i < mydata.getUserinfo().size(); i++) {
+            if (mydata.getUserinfo().get(i).getName().equals(username)) {
                 nameflag = true;
-                if (mydata.userinfo.get(i).getPa().equals(password)) {
+                if (mydata.getUserinfo().get(i).getPa().equals(password)) {
                     pasflag = true;
-                    if (mydata.userinfo.get(i).role.equals("admin")) {
+                    if (mydata.getUserinfo().get(i).role.equals("admin")) {
                         adminflag = true;
-                    } else if (mydata.userinfo.get(i).role.equals("owner")) {
+                    } else if (mydata.getUserinfo().get(i).role.equals("owner")) {
                         ownerflag = true;
-                    } else if (mydata.userinfo.get(i).role.equals("tenant")) {
+                    } else if (mydata.getUserinfo().get(i).role.equals("tenant")) {
                         tenantflag = true;
                     }
                     break;
