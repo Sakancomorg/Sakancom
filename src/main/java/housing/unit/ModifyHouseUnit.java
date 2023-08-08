@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class ModifyHouseUnit {
-	private ModifyHouseUnit() {
+	public ModifyHouseUnit() {
 		
 	}
     private static final Logger logger = Logger.getLogger(ModifyHouseUnit.class.getName());
