@@ -14,12 +14,13 @@ public class HousingSystem {
 
     public static void printData(List<HousingUnit> list) {
         for (HousingUnit house : list) {
-        	String houseInfor = String.format("ID: %d%nLocation: %s%nPhoto: %s%nRent: %.2f%nNumber of Floors: %d%nAvailable Services: %s%nStudent House: %b%n",
-        	        house.getId(), house.getLocation(), house.getPhoto(), house.getRent(), house.getNumberOfFloors(),
-        	        house.getAvailableServices(), house.isStudentHouse());
-        	logger.info(houseInfor);
+            String houseInfo = String.format("ID: %d%nLocation: %s%nPhoto: %s%nRent: %.2f%nNumber of Floors: %d%nAvailable Services: %s%nStudent House: %b%n",
+                house.getLocationInfo().getId(), house.getLocationInfo().getLocation(), house.getLocationInfo().getPhoto(), house.getLocationInfo().getRent(), house.getNumoffloors(),
+                house.getAvailableServices(), house.isStudentHouse());
+            logger.info(houseInfo);
         }
     }
+
 
     public static void viewReservations() {
         printData(MyData.reservationslist());
@@ -64,17 +65,9 @@ public class HousingSystem {
         scanner.nextLine();
 
         Apartments ap = new Apartments();
+        LocationInfo locationInfos = new LocationInfo(location, photo, rent, iDd);
 
-        HousingUnit house = new HousingUnit.Builder(location, iDd)
-                .setPhoto(photo)
-                .setRent(rent)
-                .setNumberOfTenants(0)
-                .setNumberOfFloors(numberOfFloors)
-                .setAvailableServices(availableServices)
-                .setReservedFlag(false)
-                .setApartments(ap)
-                .setStudentHouse(studentflag)
-                .build();
+        HousingUnit house = new HousingUnit(locationInfos, ap, true, studentflag,numberOfFloors,availableServices);
 
         MyData.addHousingUnitList(house);
         logger.info("The unit is added");
@@ -102,7 +95,7 @@ public class HousingSystem {
         int ids = Integer.parseInt(scanner.next()); 
         HousingUnit houseR = null;
         for (HousingUnit house : list) {
-            if (house.getId() == ids) {
+            if (house.getLocationInfo().getId() == ids) {
                 houseR = house;
             }
         }
