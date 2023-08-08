@@ -25,12 +25,13 @@ public class AdvertisementTesting {
 public void there_is_a_housing_advertisement_request() {
     // Write code here that turns the phrase above into concrete actions
 	
-	 hasAdvertisementRequest = true;
+	 if(MyData.getAvilableHousing().size()>0)
+		 hasAdvertisementRequest=true;
 }
 
 @When("the Admin views the housing advertisement request details")
 public void the_admin_views_the_housing_advertisement_request_details() {
-	if (!hasAdvertisementRequest) {
+	if (hasAdvertisementRequest) {
 		HousingSystem.viewAdvertisementRequest();
     }
 }
@@ -64,13 +65,14 @@ public void the_housing_unit_is(String outcome) {
 @Given("there is no housing advertisement request")
 public void there_is_no_housing_advertisement_request() {
     // Write code here that turns the phrase above into concrete actions
-	 hasAdvertisementRequest = false;
+	if(MyData.getAvilableHousing().size()==0)
+		 hasAdvertisementRequest=false;
 }
 
 @Then("the Admin cannot perform any action")
 public void the_admin_cannot_perform_any_action() {
     // Write code here that turns the phrase above into concrete actions
-    assertTrue(true);
+    assertFalse( hasAdvertisementRequest);
 }
 
 }
