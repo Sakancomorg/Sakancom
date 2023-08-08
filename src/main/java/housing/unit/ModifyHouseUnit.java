@@ -41,11 +41,12 @@ public class ModifyHouseUnit {
 
         logger.info("Enter the new available services: ");
         String newAvailableServices = scanner.next();
-
+        
         logger.info("Is the residence for Students? (true/false):");
         boolean studentflag = scanner.nextBoolean();
         scanner.nextLine();
-
+          housingUnitToModify.setStudentHouse(Studentflag);
+	
         housingUnitToModify.setAvailableServices(newAvailableServices);
 
         logger.info("Housing unit with ID " + housingUnitToModify.getId() + " has been modified.");
