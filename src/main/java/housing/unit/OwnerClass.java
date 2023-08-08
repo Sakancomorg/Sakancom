@@ -150,19 +150,11 @@ public void addresidence() {
         String comm=  scanner.nextLine();
         meansOfCommunication.add(comm);
 
-         apr=new Apartments(floornum,ida ,tenantNames,meansOfCommunication,5,3,true);
-       
-        HousingUnit house = new HousingUnit.Builder(locationr, idd)
-                .setPhoto(photos)
-                .setRent(rents)
-                .setNumberOfTenants(0)
-                .setNumberOfFloors(numberofFloors)
-                .setAvailableServices(availableServices)
-                .setReservedFlag(false)
-                .setApartments(apr)
-                .setStudentHouse(studentflag)
-                .build();
-        
+         apr=new Apartments(floornum,ida ,tenantNames,meansOfCommunication,numberofFloors,3,true);
+         
+         LocationInfo locationInfo = new LocationInfo(locationr, photos, rents, idd);
+         HousingUnit house = new HousingUnit(locationInfo, apr, true, studentflag, floornum,availableServices);
+
         houseinfo.add(house);
 	    MyData.addAdvertisementList(house);
 	    addflag = true;
@@ -185,18 +177,10 @@ public void init() {
     ArrayList<String> meansOfCommunication1 = new ArrayList<String>();
     meansOfCommunication1.add("Email");
 
-    Apartments a1 = new Apartments(floornum1, ida1, tenantNames1, meansOfCommunication1, 5, 3, true);
+    Apartments a1 = new Apartments(floornum1, ida1, tenantNames1, meansOfCommunication1, numberOfTenants1, numberOfFloors1, acceptflag1);
+    LocationInfo locationInfo1 = new LocationInfo(location1, photo1, rent1, iD1);
+    HousingUnit house1 = new HousingUnit(locationInfo1, a1, true, true, floornum,availableServices1);
 
-    HousingUnit house1 = new HousingUnit.Builder(location1, iD1)
-            .setPhoto(photo1)
-            .setRent(rent1)
-            .setNumberOfTenants(numberOfTenants1)
-            .setNumberOfFloors(numberOfFloors1)
-            .setAvailableServices(availableServices1)
-            .setReservedFlag(acceptflag1)
-            .setApartments(a1)
-            .setStudentHouse(true)
-            .build();
     
     houseinfo.add(house1);
     int iD2 = 2;
@@ -215,18 +199,12 @@ public void init() {
     ArrayList<String> meansOfCommunication2 = new ArrayList<String>();
     meansOfCommunication2.add("Phone");
 
-    Apartments a2 = new Apartments(floornum2, ida2, tenantNames2, meansOfCommunication2, 4, 2, false);
+    Apartments a2 = new Apartments(floornum2, ida2, tenantNames2, meansOfCommunication2, numberOfTenants2, numberOfFloors2, acceptflag2);
+    
+    LocationInfo locationInfo2 = new LocationInfo(location2, photo2, rent2, iD2);
+    HousingUnit house2 = new HousingUnit(locationInfo2, a2, true, true, floornum,availableServices2);
 
-    HousingUnit house2 = new HousingUnit.Builder(location2, iD2)
-            .setPhoto(photo2)
-            .setRent(rent2)
-            .setNumberOfTenants(numberOfTenants2)
-            .setNumberOfFloors(numberOfFloors2)
-            .setAvailableServices(availableServices2)
-            .setReservedFlag(acceptflag2)
-            .setApartments(a2)
-            .setStudentHouse(true)
-            .build();
+    
     houseinfo.add(house2);
 
 
@@ -236,11 +214,11 @@ public void viewresidences() {
 	for (HousingUnit unit : houseinfo) {
 	    String unitInfo = String.format(
 	        "ID: %d, Location: %s, Rent: $%.2f, Tenants: %d, Floors: %d, Services: %s, Accept: %b",
-	        unit.getId(), unit.getLocation(), unit.getRent(), unit.getNumberOfTenants(),
-	        unit.getNumberOfFloors(), unit.getAvailableServices(), unit.isReservedFlag()
+	        unit.getLocationInfo().getId(), unit.getLocationInfo().getLocation(), unit.getLocationInfo().getRent(), unit.getNumoftenants(),
+	        unit.getNumoffloors(), unit.getAvailableServices(), unit.isReservedFlag()
 	    );
 	    logger.info(unitInfo);
-	    String apartmentsInfo = String.format("Apartments: %s", unit.getA().toString());
+	    String apartmentsInfo = String.format("Apartments: %s", unit.getApartmentInfo().toString());
 	    logger.info(apartmentsInfo);
 
 	    
@@ -255,7 +233,7 @@ public void numoftenant() {
      idresidence = scanner.nextInt();
     for(int i=1;i<=houseinfo.size();i++) {
     	if(idresidence==i) {
-            num=houseinfo.get(i).getNumberOfTenants();
+            num=houseinfo.get(i).getNumoftenants();
     	}
     }
     numfloorandTen =true;
@@ -266,7 +244,7 @@ public void numoffloors() {
 	int n=0;
 	for(int i=1;i<houseinfo.size();i++) {
     	if(idresidence==i) {
-            n=houseinfo.get(i).getNumberOfFloors();
+            n=houseinfo.get(i).getNumoffloors();
     	}
     numfloorandTen =true;
     String floorsInfo = String.format("And the number of floors is: %d", n);
@@ -281,8 +259,8 @@ public void viewapatmen() {
     logger.info("Enter the number of floor:");
 	int idf = scanner.nextInt();
     for (HousingUnit unit : houseinfo) {
-        if (unit.getA().getFloor() == idf) {
-        	Apartments apartment = unit.getA();
+        if (unit.getApartmentInfo().getFloor() == idf) {
+        	Apartments apartment = unit.getApartmentInfo();
             apartmentsList.add(apartment);
             
         }
@@ -318,4 +296,3 @@ public void viewapatmen() {
 
     
 }
-
