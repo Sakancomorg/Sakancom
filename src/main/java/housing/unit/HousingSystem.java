@@ -14,7 +14,10 @@ public class HousingSystem {
 
     public static void printData(List<HousingUnit> list) {
         for (HousingUnit house : list) {
-            logger.info(house.toString());
+        	String houseInfor = String.format("ID: %d%nLocation: %s%nPhoto: %s%nRent: %.2f%nNumber of Floors: %d%nAvailable Services: %s%nStudent House: %b%n",
+        	        house.getId(), house.getLocation(), house.getPhoto(), house.getRent(), house.getNumberOfFloors(),
+        	        house.getAvailableServices(), house.isStudentHouse());
+        	logger.info(houseInfor);
         }
     }
 
