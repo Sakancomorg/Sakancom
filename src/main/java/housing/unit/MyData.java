@@ -11,33 +11,23 @@ public class MyData {
 	private boolean passflag;
 	private boolean eflag;
 	
-
-	
 	public boolean isIslog() {
 		return islog;
 	}
-	public void setIslog(boolean islog) {
-		this.islog = islog;
-	}
+	
 	public boolean isPassflag() {
 		return passflag;
 	}
-	public void setPassflag(boolean passflag) {
-		this.passflag = passflag;
-	}
+	
 	public boolean isEflag() {
 		return eflag;
 	}
-	public void setEflag(boolean eflag) {
-		this.eflag = eflag;
-	}
+	
 	private List<User> userinfo = new ArrayList<User>();
   public List<User> getUserinfo() {
 		return userinfo;
 	}
-	public void setUserinfo(List<User> userinfo) {
-		this.userinfo = userinfo;
-	}
+	
 static List <HousingUnit> housingunitlist=new ArrayList<HousingUnit>() ;
    static List <HousingUnit> advertisementlist=new ArrayList<HousingUnit>() ;
    static List <HousingUnit> reservationslist=new ArrayList<HousingUnit>() ;
@@ -104,6 +94,4 @@ public static List<HousingUnit> getAvilableHousing() {
 }
   
     
-  
-	
 }
