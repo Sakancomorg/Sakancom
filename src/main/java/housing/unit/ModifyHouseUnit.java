@@ -45,7 +45,7 @@ public class ModifyHouseUnit {
         logger.info("Is the residence for Students? (true/false):");
         boolean studentflag = scanner.nextBoolean();
         scanner.nextLine();
-          housingUnitToModify.setStudentHouse(Studentflag);
+          housingUnitToModify.setStudentHouse(studentflag);
 	
         housingUnitToModify.setAvailableServices(newAvailableServices);
 
