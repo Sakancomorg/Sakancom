@@ -25,19 +25,19 @@ public class ModifyHouseUnit {
        
         logger.info("Enter the new location: ");
         String newLocation = scanner.next();
-        housingUnitToModify.setLocation(newLocation);
+        housingUnitToModify.getLocationInfo().setLocation(newLocation);
 
         logger.info("Enter the new photo: ");
         String newPhoto = scanner.next();
-        housingUnitToModify.setPhoto(newPhoto);
+        housingUnitToModify.getLocationInfo().setPhoto(newPhoto);
 
         logger.info("Enter the new rent: ");
         double newRent = scanner.nextDouble();
-        housingUnitToModify.setRent(newRent);
+        housingUnitToModify.getLocationInfo().setRent(newRent);
 
         logger.info("Enter the new number of floors: ");
         int newNumberOfFloors = scanner.nextInt();
-        housingUnitToModify.setNumberOfFloors(newNumberOfFloors);
+        housingUnitToModify.setNumoffloors(newNumberOfFloors);
 
         logger.info("Enter the new available services: ");
         String newAvailableServices = scanner.next();
@@ -49,7 +49,7 @@ public class ModifyHouseUnit {
 	
         housingUnitToModify.setAvailableServices(newAvailableServices);
 
-        logger.info("Housing unit with ID " + housingUnitToModify.getId() + " has been modified.");
+        logger.info("Housing unit with ID " +housingUnitToModify.getLocationInfo().getId()  + " has been modified.");
     }
 
     public static void modifyAdmin() {
