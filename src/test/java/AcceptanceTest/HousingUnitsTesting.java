@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import housing.unit.HouseExist;
@@ -25,16 +25,17 @@ HousingUnit EnteredHouse;
 HousingUnit ModifiesHouseBefore;
 HousingUnit ModifiesHouseAfter;
 List <HousingUnit> HousingUnitList;
-ModifyHouseUnit MH ;
-public HousingUnitsTesting(ModifyHouseUnit MH) {
+
+public HousingUnitsTesting() {
 		super();
 
 	    this.EnteredHouse=HousingSystem.addUnit();
 	    this.HousingUnitList=MyData.getHousingUnitList();
-	    this.MH=MH;
+
 	    
 	   
 	}
+
 
 @Given("the Admin enterd the info of the housing unit")
 public void the_admin_enterd_the_info_of_the_housing_unit() {
