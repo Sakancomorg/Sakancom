@@ -10,23 +10,16 @@ public class Furniture {
 	public String getFurnitureName() {
 		return furniturename;
 	}
-
 	public String getFurnitureCategory() {
 		return furniturecategory;
 	}
 
-	
 	public String getDescription() {
 		return description;
 	}
 
-
 	public double getPrice() {
 		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
 	}
 
 	public String getContactInfo() {
