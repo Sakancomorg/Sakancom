@@ -21,22 +21,19 @@ public class HousingUnitsTesting {
 	
 
 private boolean HouseIsExist;
-MyData obj=null ;
 HousingUnit EnteredHouse;
 HousingUnit ModifiesHouseBefore;
 HousingUnit ModifiesHouseAfter;
 List <HousingUnit> HousingUnitList;
 ModifyHouseUnit MH ;
-public HousingUnitsTesting(MyData obj,ModifyHouseUnit MH) {
+public HousingUnitsTesting(ModifyHouseUnit MH) {
 		super();
-		this.obj= obj;
+
 	    this.EnteredHouse=HousingSystem.addUnit();
 	    this.HousingUnitList=MyData.getHousingUnitList();
 	    this.MH=MH;
-	    ModifyHouseUnit.modifyAdmin();
-	    this.ModifiesHouseBefore= ModifyHouseUnit.getHousingUnitToModify();
-	    this.ModifiesHouseAfter= ModifyHouseUnit.getHousingUnitToModifyAfter();
 	    
+	   
 	}
 
 @Given("the Admin enterd the info of the housing unit")
@@ -74,13 +71,21 @@ public void the_housing_unit_details_are_saved_in_the_system() {
 @Given("the Admin has selected a housing unit for modification")
 public void the_admin_has_selected_a_housing_unit_for_modification() {
     // Write code here that turns the phrase above into concrete actions
+	
+	       
+	ModifyHouseUnit.modifyAdmin();
+	 this.ModifiesHouseBefore= ModifyHouseUnit.getHousingUnitToModify();
 	assertNotNull(ModifiesHouseBefore);
     
 }
 
+
 @When("the Admin makes changes to the housing data")
 public void the_admin_makes_changes_to_the_housing_data() {
     // Write code here that turns the phrase above into concrete actions
+
+	 this.ModifiesHouseAfter= ModifyHouseUnit.getHousingUnitToModifyAfter();
+	
 	assertNotNull(ModifiesHouseAfter);
 	
    
