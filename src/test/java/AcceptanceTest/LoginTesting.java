@@ -19,7 +19,7 @@ public class LoginTesting {
 @Given("{string} status log is {int}")
 public void status_log_is(String string, Integer S) {
 	L.initarrayvalues();
-	    for (int i = 0; i < L.userinfo.size(); i++) {
+	    for (int i = 0; i < L.getUserinfo().size(); i++) {
 		if(S==0) {
 			islog=false;
 		}
@@ -34,8 +34,8 @@ public void status_log_is(String string, Integer S) {
 public void the_password_is(String pass) {
 	L.initarrayvalues();
 
-    for (int i = 0; i < L.userinfo.size(); i++) {
-		if(L.userinfo.get(i).getPa().equals(pass)) {
+    for (int i = 0; i < L.getUserinfo().size(); i++) {
+		if(L.getUserinfo().get(i).getPa().equals(pass)) {
 			   passflag=true;
 		}
 		else {
@@ -52,8 +52,8 @@ public void the_password_is(String pass) {
 public void the_email_is(String E) {
 	L.initarrayvalues();
 
-	for (int i = 0; i < L.userinfo.size(); i++) {
-		if(L.userinfo.get(i).getEmaill().equals(E)) {
+	for (int i = 0; i < L.getUserinfo().size(); i++) {
+		if(L.getUserinfo().get(i).getEmaill().equals(E)) {
 			   eflag=true;
 		}
 		else {
