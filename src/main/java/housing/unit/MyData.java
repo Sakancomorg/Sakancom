@@ -31,8 +31,14 @@ public class MyData {
 	public void setEflag(boolean eflag) {
 		this.eflag = eflag;
 	}
-	public List<User> userinfo = new ArrayList<User>();
-  static List <HousingUnit> housingunitlist=new ArrayList<HousingUnit>() ;
+	private List<User> userinfo = new ArrayList<User>();
+  public List<User> getUserinfo() {
+		return userinfo;
+	}
+	public void setUserinfo(List<User> userinfo) {
+		this.userinfo = userinfo;
+	}
+static List <HousingUnit> housingunitlist=new ArrayList<HousingUnit>() ;
    static List <HousingUnit> advertisementlist=new ArrayList<HousingUnit>() ;
    static List <HousingUnit> reservationslist=new ArrayList<HousingUnit>() ;
   
