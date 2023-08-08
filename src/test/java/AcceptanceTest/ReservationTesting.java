@@ -21,7 +21,7 @@ public class ReservationTesting {
    static List <HousingUnit> ReservationsList=MyData.reservationslist();
 
 
-public ReservationTest(AdminClass adminClass) {
+public ReservationTesting(AdminClass adminClass) {
 	this.adminClass = adminClass;
 }
 @Given("there are existing reservations in the system")
