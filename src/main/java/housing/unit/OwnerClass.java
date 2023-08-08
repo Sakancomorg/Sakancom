@@ -10,7 +10,7 @@ public class OwnerClass {
 	List<HousingUnit> houseinfo = new ArrayList<HousingUnit>();
 	List<String> tenantNames = new ArrayList<String>();
 	List<String> meansOfCommunication = new ArrayList<String>();
-	Apartments a;
+	Apartments apr;
 	private Scanner scanner;
 	private boolean readinfoflag=false;
 	private boolean addflag=false;
@@ -118,18 +118,18 @@ public void addresidence() {
         scanner.nextLine();
 
         logger.info("Enter the location:");
-        String location = scanner.nextLine();
+        String locationr = scanner.nextLine();
 
         logger.info("Enter the photo:");
-        String photo = scanner.nextLine();
+        String photos = scanner.nextLine();
 
         logger.info("Enter the rent:");
-        double rent = scanner.nextDouble();
+        double rents = scanner.nextDouble();
         scanner.nextLine();
 
 
         logger.info("Enter the number of floors:");
-        int numberOfFloors = scanner.nextInt();
+        int numberofFloors = scanner.nextInt();
         scanner.nextLine();
 
         logger.info("Enter available services:");
@@ -150,16 +150,16 @@ public void addresidence() {
         String comm=  scanner.nextLine();
         meansOfCommunication.add(comm);
 
-         a=new Apartments(floornum,ida ,tenantNames,meansOfCommunication,5,3,true);
+         apr=new Apartments(floornum,ida ,tenantNames,meansOfCommunication,5,3,true);
        
-        HousingUnit house = new HousingUnit.Builder(location, idd)
-                .setPhoto(photo)
-                .setRent(rent)
+        HousingUnit house = new HousingUnit.Builder(locationr, idd)
+                .setPhoto(photos)
+                .setRent(rents)
                 .setNumberOfTenants(0)
-                .setNumberOfFloors(numberOfFloors)
+                .setNumberOfFloors(numberofFloors)
                 .setAvailableServices(availableServices)
                 .setReservedFlag(false)
-                .setApartments(a)
+                .setApartments(apr)
                 .setStudentHouse(studentflag)
                 .build();
         
@@ -187,7 +187,7 @@ public void init() {
 
     Apartments a1 = new Apartments(floornum1, ida1, tenantNames1, meansOfCommunication1, 5, 3, true);
 
-    HousingUnit house = new HousingUnit.Builder(location1, iD1)
+    HousingUnit house1 = new HousingUnit.Builder(location1, iD1)
             .setPhoto(photo1)
             .setRent(rent1)
             .setNumberOfTenants(numberOfTenants1)
@@ -198,7 +198,7 @@ public void init() {
             .setStudentHouse(true)
             .build();
     
-    houseinfo.add(house);
+    houseinfo.add(house1);
     int iD2 = 2;
     String location2 = "123 Main Street";
     String photo2 = "house.jpg";
