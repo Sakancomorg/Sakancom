@@ -78,8 +78,9 @@ public class HousingSystem {
         HousingSystem.printData(advertisementlist);
         if (advertisementlist.isEmpty()) {
             logger.info("No new Advertisement requests");
-            return;
+          
         }
+        else {
         logger.info("1. Accept a housing advertisement");
         logger.info("2. Reject a housing advertisement");
         int decision = Integer.parseInt(scanner.next());
@@ -88,7 +89,7 @@ public class HousingSystem {
             acceptAdvertisementRequest();
         else if (decision == 2)
            rejectAdvertisementRequest();
-       
+        }
     }
 
     static HousingUnit findHouse(List<HousingUnit> list) {
