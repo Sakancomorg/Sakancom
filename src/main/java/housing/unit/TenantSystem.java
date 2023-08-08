@@ -3,6 +3,10 @@ package housing.unit;
 import java.util.logging.Logger;
 
 public class TenantSystem {
+	private TenantSystem() {
+		
+	}
+	
     private static final Logger logger = Logger.getLogger(TenantSystem.class.getName());
 
 	public static void viewAvailableHousing() {
