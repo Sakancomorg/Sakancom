@@ -20,24 +20,12 @@ public class LoginSteps {
 		return adminflag;
 	}
 
-	public void setAdminflag(boolean adminflag) {
-		this.adminflag = adminflag;
-	}
-
 	public boolean isTenantflag() {
 		return tenantflag;
 	}
 
-	public void setTenantflag(boolean tenantflag) {
-		this.tenantflag = tenantflag;
-	}
-
 	public boolean isOwnerflag() {
 		return ownerflag;
-	}
-
-	public void setOwnerflag(boolean ownerflag) {
-		this.ownerflag = ownerflag;
 	}
 
 	public void init() {
