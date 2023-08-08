@@ -35,9 +35,8 @@ public class HousingSystem {
     }
 
     public static HousingUnit addUnit() {
-        Scanner scanner = new Scanner(System.in);
         logger.info("Enter the id:");
-        int iD = scanner.nextInt();
+        int iDd = scanner.nextInt();
         scanner.nextLine();
 
         logger.info("Enter the location:");
@@ -61,16 +60,16 @@ public class HousingSystem {
         boolean studentflag = scanner.nextBoolean();
         scanner.nextLine();
 
-        Apartments a = new Apartments();
+        Apartments ap = new Apartments();
 
-        HousingUnit house = new HousingUnit.Builder(location, iD)
+        HousingUnit house = new HousingUnit.Builder(location, iDd)
                 .setPhoto(photo)
                 .setRent(rent)
                 .setNumberOfTenants(0)
                 .setNumberOfFloors(numberOfFloors)
                 .setAvailableServices(availableServices)
                 .setReservedFlag(false)
-                .setApartments(a)
+                .setApartments(ap)
                 .setStudentHouse(studentflag)
                 .build();
 
@@ -97,10 +96,10 @@ public class HousingSystem {
     }
 
     static HousingUnit findHouse(List<HousingUnit> list) {
-        int id = Integer.parseInt(scanner.next()); 
+        int ids = Integer.parseInt(scanner.next()); 
         HousingUnit houseR = null;
         for (HousingUnit house : list) {
-            if (house.getId() == id) {
+            if (house.getId() == ids) {
                 houseR = house;
             }
         }
