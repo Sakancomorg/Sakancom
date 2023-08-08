@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-		features="test_cases/ownerFeature", 
+		features="test_cases/AdminFeatures/HousingUnits", 
 
 		plugin="html:target/cucumber/out.html",
 		monochrome=true,
