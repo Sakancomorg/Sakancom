@@ -1,12 +1,12 @@
 package AcceptanceTest;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import housing.unit.AdminClass;
 import housing.unit.HouseExist;
 import housing.unit.HousingSystem;
 import housing.unit.HousingUnit;
@@ -67,21 +67,21 @@ public void the_housing_unit_details_are_saved_in_the_system() {
     	  HousingUnitList.add(EnteredHouse);
     	  HousingUnitCount++;
 	  }
-	  assertTrue(HousingUnitCount==HousingUnitList.size());
+	  assertEquals(HousingUnitCount,HousingUnitList.size());
     
 }
 
 @Given("the Admin has selected a housing unit for modification")
 public void the_admin_has_selected_a_housing_unit_for_modification() {
     // Write code here that turns the phrase above into concrete actions
-	assertTrue(ModifiesHouseBefore!=null);
+	assertNotNull(ModifiesHouseBefore);
     
 }
 
 @When("the Admin makes changes to the housing data")
 public void the_admin_makes_changes_to_the_housing_data() {
     // Write code here that turns the phrase above into concrete actions
-	assertTrue(ModifiesHouseAfter!=null);
+	assertNotNull(ModifiesHouseAfter);
 	
    
 }
