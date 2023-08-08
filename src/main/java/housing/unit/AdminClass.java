@@ -47,8 +47,5 @@ public class AdminClass {
 	public Boolean getRe() {
 		return re;
 	}
-
-	public void setRe(Boolean re) {
-		this.re = re;
-	}
+	
 }
