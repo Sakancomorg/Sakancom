@@ -2,11 +2,11 @@ package housing.unit;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
-import java.util.logging.Level;
+
 
 public class LoginSteps {
     private static final Logger logger = Logger.getLogger(LoginSteps.class.getName());
-    MyData L = new MyData();
+    MyData mydata = new MyData();
     private boolean adminflag = false;
     private boolean tenantflag = false;
     private boolean ownerflag = false;
@@ -41,7 +41,7 @@ public class LoginSteps {
 	}
 
 	public void init() {
-        L.initarrayvalues();
+        mydata.initarrayvalues();
         logger.info("=== Login System ===");
         boolean isLoggedIn = false;
         while (!isLoggedIn) {
@@ -61,16 +61,16 @@ public class LoginSteps {
     public boolean checkCredentials(String username, String password) {
         boolean nameflag = false;
         boolean pasflag = false;
-        for (int i = 0; i < L.userinfo.size(); i++) {
-            if (L.userinfo.get(i).getName().equals(username)) {
+        for (int i = 0; i < mydata.userinfo.size(); i++) {
+            if (mydata.userinfo.get(i).getName().equals(username)) {
                 nameflag = true;
-                if (L.userinfo.get(i).getPa().equals(password)) {
+                if (mydata.userinfo.get(i).getPa().equals(password)) {
                     pasflag = true;
-                    if (L.userinfo.get(i).role.equals("admin")) {
+                    if (mydata.userinfo.get(i).role.equals("admin")) {
                         adminflag = true;
-                    } else if (L.userinfo.get(i).role.equals("owner")) {
+                    } else if (mydata.userinfo.get(i).role.equals("owner")) {
                         ownerflag = true;
-                    } else if (L.userinfo.get(i).role.equals("tenant")) {
+                    } else if (mydata.userinfo.get(i).role.equals("tenant")) {
                         tenantflag = true;
                     }
                     break;
